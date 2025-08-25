@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f4f4f5; /* Light gray background */
-    color: #18181b; /* Dark text color */
+    background-color: #e5e5e5;
+    color: #18181b;
     line-height: 1.6;
     display: flex;
     justify-content: center;
@@ -17,64 +17,43 @@ body {
 
 .page-wrapper {
     width: 100%;
-    max-width: 800px; /* Controls the max width of the content */
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Space between sections */
+    gap: 40px; /* Reduced space between main card and etsy offer */
 }
 
 /* --- Typography --- */
-h1 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -1.5px;
-}
+h1 { font-size: 48px; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; }
+h2 { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; text-align: center; }
+h3 { font-size: 18px; font-weight: 700; }
+p { font-size: 16px; max-width: 600px; }
+a { color: #007bff; text-decoration: none; font-weight: 700; }
 
-h2 {
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -1px;
-    text-align: center;
-}
-
-h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-p {
-    font-size: 16px;
-    max-width: 600px; /* Keeps paragraph text from getting too wide */
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-/* --- Section Styling --- */
-.hero, .app-proof, .cta, .how-it-works, .etsy-offer {
+/* --- NEW: Master Card Styling --- */
+.master-card {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px; /* Space between elements inside a section */
+    gap: 30px;
 }
 
-.tagline {
-    font-size: 20px;
-    color: #52525b;
-}
-
-.app-proof img {
+/* --- Content Sections (no background of their own anymore) --- */
+.hero, .app-proof, .cta, .how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
     width: 100%;
-    max-width: 600px; /* UPDATED: Increased from 450px for a larger display */
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
+
+.tagline { font-size: 20px; color: #52525b; }
+.app-proof img { width: 100%; max-width: 600px; border-radius: 16px; }
 
 .cta-button {
     display: inline-block;
@@ -86,21 +65,15 @@ a {
     font-weight: 700;
     transition: transform 0.2s ease;
 }
+.cta-button:hover { transform: scale(1.05); }
+.value-prop { font-size: 14px; color: #71717a; max-width: 500px; }
 
-.cta-button:hover {
-    transform: scale(1.05);
-}
-
-.value-prop {
-    font-size: 14px;
-    color: #71717a;
-    max-width: 450px;
-}
-
-.how-it-works {
-    background-color: #ffffff;
-    padding: 50px 30px;
-    border-radius: 24px;
+/* --- NEW: Divider Styling --- */
+.section-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 20px 0;
 }
 
 .steps-container {
@@ -110,42 +83,26 @@ a {
     margin-top: 40px;
     width: 100%;
 }
+.step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+.icon { width: 48px; height: 48px; }
 
-.step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.icon {
-    width: 48px;
-    height: 48px;
-}
-
-.privacy-note {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #a1a1aa;
-}
-
+/* --- Etsy Offer Section --- */
 .etsy-offer {
     border: 2px dashed #d4d4d8;
     padding: 30px;
     border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
-
-.etsy-offer h3 {
-    font-size: 24px;
-    font-weight: 700;
-}
+.etsy-offer h3 { font-size: 24px; font-weight: 700; }
 
 /* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
-    .steps-container {
-        flex-direction: column;
-    }
+    .steps-container { flex-direction: column; }
+    .master-card { padding: 40px 20px; }
 }
