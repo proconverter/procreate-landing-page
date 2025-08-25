@@ -1,0 +1,151 @@
+/* --- Global Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f5; /* Light gray background */
+    color: #18181b; /* Dark text color */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 800px; /* Controls the max width of the content */
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between sections */
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    max-width: 600px; /* Keeps paragraph text from getting too wide */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* --- Section Styling --- */
+.hero, .app-proof, .cta, .how-it-works, .etsy-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Space between elements inside a section */
+}
+
+.tagline {
+    font-size: 20px;
+    color: #52525b;
+}
+
+.app-proof img {
+    width: 100%;
+    max-width: 450px; /* Controls the size of the screenshot */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+.value-prop {
+    font-size: 14px;
+    color: #71717a;
+    max-width: 450px;
+}
+
+.how-it-works {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 24px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+}
+
+.privacy-note {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #a1a1aa;
+}
+
+.etsy-offer {
+    border: 2px dashed #d4d4d8;
+    padding: 30px;
+    border-radius: 24px;
+}
+
+.etsy-offer h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    .steps-container {
+        flex-direction: column;
+    }
+}
