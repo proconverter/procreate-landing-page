@@ -3,63 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procreate Brush Converter | Instantly Convert .brushset to PNG</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Procreate Brush Converter | Convert .brushset to PNG</title>
+    <meta name="description" content="The easiest way to convert your Procreate .brushset stamp files into high-quality, ready-to-use PNG files. Fast, secure, and no software to install.">
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            text-decoration: none;
+            color: #212529;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #495057;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .value-proposition {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .value-proposition-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px auto 0;
+            display: inline-block;
+            text-align: left;
+            max-width: 450px;
+            color: #495057;
+        }
+        .value-proposition-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .value-proposition-list svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+        }
+        .step {
+            max-width: 250px;
+        }
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+        .step h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .step p {
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step { margin-bottom: 40px; }
+            .step:last-child { margin-bottom: 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Brush Converter</a>
+            <a href="YOUR_WEB_APP_URL_HERE" class="cta-button" style="font-size: 16px; padding: 10px 20px;">Launch App</a>
+        </div>
+    </header>
 
-        <div class="master-card">
-            <header class="hero">
-                <h1>The Last Procreate Brush Converter You'll Ever Need.</h1>
-                <p class="tagline">Instantly extract your `.brushset` files into ready-to-use PNGs. Fast, private, and ready in a single click.</p>
-            </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Easiest Way to Convert Procreate Stamps to PNG</h1>
+                <p>Instantly extract stamp images from your .brushset files. No software, no hassle. Just upload your files and download high-quality PNGs in seconds.</p>
+                
+                <!-- REVISED CTA BUTTON -->
+                <a href="https://presentandcherish.lemonsqueezy.com/buy/9fac6a82-c127-4b2e-845d-dec42c9f33ce" target="_blank" class="cta-button">Get Instant Access - $9.99</a>
+                
+                <!-- REVISED VALUE PROPOSITION -->
+                <div class="value-proposition">
+                    <p style="font-weight: 500; margin-bottom: 8px;">Your one-time purchase unlocks:</p>
+                    <ul class="value-proposition-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>10 Conversion Credits:</strong> Each credit handles a full conversion session.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>Batch Processing:</strong> Convert multiple .brushset files in one go.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>Lossless PNG Extraction:</strong> We extract the original stamp image without quality loss.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>No Expiration:</strong> Use your credits whenever you need them. No subscriptions, no hidden fees.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <section class="app-proof">
-                <img src="app-screenshot.png" alt="A clean, simple, and easy to use interface for the brush converter app.">
-            </section>
-
-            <section class="cta">
-                <a href="YOUR_LEMON_SQUEEZY_LINK_HERE" class="cta-button">Get Your License</a>
-                <p class="value-prop">Your <strong>one-time license purchase</strong> includes: 10 Full Conversion Sessions | Convert one or more .brushset files (50MB total per session ) | Ready-to-Use PNG Files | No subscriptions, no hidden fees.</p>
-            </section>
-
-            <hr class="section-divider">
-
-            <section class="how-it-works">
-                <!-- UPDATED: Added the mobile-break tag -->
-                <h2>A Seamless Workflow.<br class="mobile-break"> By Design.</h2>
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
                 <div class="steps-container">
                     <div class="step">
-                        <img src="icon-upload.svg" alt="Get License icon" class="icon">
-                        <h3>1. Get Your License</h3>
-                        <p>After purchase, you'll instantly receive your lifetime license key via email.</p>
+                        <img src="https://cdn.jsdelivr.net/gh/feathericons/feather@latest/icons/upload-cloud.svg" alt="Upload Icon" class="step-icon">
+                        <h3>1. Upload</h3>
+                        <p>Select one or more .brushset files from your computer or tablet.</p>
                     </div>
                     <div class="step">
-                        <img src="icon-convert.svg" alt="Upload Brushes icon" class="icon">
-                        <h3>2. Upload Your Brushes</h3>
-                        <p>Enter your key into the converter and upload your `.brushset` files.</p>
+                        <img src="https://cdn.jsdelivr.net/gh/feathericons/feather@latest/icons/cpu.svg" alt="Convert Icon" class="step-icon">
+                        <h3>2. Convert</h3>
+                        <p>Our tool securely processes your files, extracting each stamp image.</p>
                     </div>
                     <div class="step">
-                        <img src="icon-download.svg" alt="Download PNGs icon" class="icon">
-                        <h3>3. Download Your PNGs</h3>
-                        <p>Receive a perfectly organized `.zip` file with your ready-to-use PNGs.</p>
+                        <img src="https://cdn.jsdelivr.net/gh/feathericons/feather@latest/icons/download-cloud.svg" alt="Download Icon" class="step-icon">
+                        <h3>3. Download</h3>
+                        <p>Get a neatly packaged .zip file containing all your stamps as PNGs.</p>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </main>
 
-        <footer class="etsy-offer">
-            <h3>Are you an Etsy user?</h3>
-            <p>We have a special place in our hearts for the Etsy community. We're offering a special discount to get you started.</p>
-            <a href="YOUR_ETSY_LISTING_LINK_HERE">View our Etsy-Exclusive Offer</a>
-        </footer>
-
-    </div>
+    <footer class="footer">
+        <p>&copy; 2025 PresentAndCherish. All rights reserved.</p>
+        <p>
+            <a href="#">Feedback</a> | <a href="#">Terms & Privacy</a>
+        </p>
+    </footer>
 
 </body>
 </html>
