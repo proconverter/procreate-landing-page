@@ -71,7 +71,7 @@ a {
 
 .app-proof img {
     width: 100%;
-    max-width: 450px; /* Controls the size of the screenshot */
+    max-width: 600px; /* UPDATED: Increased from 450px for a larger display */
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
