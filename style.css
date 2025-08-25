@@ -20,7 +20,7 @@ body {
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Reduced space between main card and etsy offer */
+    gap: 40px;
 }
 
 /* --- Typography --- */
@@ -30,7 +30,7 @@ h3 { font-size: 18px; font-weight: 700; }
 p { font-size: 16px; max-width: 600px; }
 a { color: #007bff; text-decoration: none; font-weight: 700; }
 
-/* --- NEW: Master Card Styling --- */
+/* --- Master Card Styling --- */
 .master-card {
     background-color: #ffffff;
     padding: 50px 40px;
@@ -42,7 +42,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     gap: 30px;
 }
 
-/* --- Content Sections (no background of their own anymore) --- */
+/* --- Content Sections --- */
 .hero, .app-proof, .cta, .how-it-works {
     display: flex;
     flex-direction: column;
@@ -68,7 +68,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .cta-button:hover { transform: scale(1.05); }
 .value-prop { font-size: 14px; color: #71717a; max-width: 500px; }
 
-/* --- NEW: Divider Styling --- */
 .section-divider {
     width: 100%;
     border: none;
@@ -83,14 +82,24 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     margin-top: 40px;
     width: 100%;
 }
-.step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
-.icon { width: 48px; height: 48px; }
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* UPDATED: Changed gap to margin for more specific control */
+}
+.icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px; /* UPDATED: Added more space below the icon */
+}
 
 /* --- Etsy Offer Section --- */
 .etsy-offer {
-    border: 2px dashed #d4d4d8;
-    padding: 30px;
-    border-radius: 24px;
+    /* UPDATED: Removed border and adjusted padding */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,4 +114,12 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     h2 { font-size: 28px; }
     .steps-container { flex-direction: column; }
     .master-card { padding: 40px 20px; }
+    
+    /* NEW: Hides the line break on desktop */
+    .mobile-break { display: none; }
+}
+
+@media (max-width: 480px) {
+    /* NEW: Shows the line break only on small mobile screens */
+    .mobile-break { display: block; }
 }
