@@ -1,14 +1,15 @@
-<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <g transform="rotate(-18, 200, 200)">
-    <circle cx="280" cy="200" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="264.72" cy="247.02" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="224.72" cy="280.90" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="175.28" cy="280.90" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="135.28" cy="247.02" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="120" cy="200" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="135.28" cy="152.98" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="175.28" cy="119.10" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="224.72" cy="119.10" r="100" stroke="black" stroke-width="5" fill="none"/>
-    <circle cx="264.72" cy="152.98" r="100" stroke="black" stroke-width="5" fill="none"/>
-  </g>
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#18181b" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <!-- These 10 circles are generated using the formula above -->
+        <circle cx="18" cy="12" r="5"/>
+        <circle cx="16.854" cy="15.528" r="5"/>
+        <circle cx="13.854" cy="17.706" r="5"/>
+        <circle cx="10.146" cy="17.706" r="5"/>
+        <circle cx="7.146" cy="15.528" r="5"/>
+        <circle cx="6" cy="12" r="5"/>
+        <circle cx="7.146" cy="8.472" r="5"/>
+        <circle cx="10.146" cy="6.294" r="5"/>
+        <circle cx="13.854" cy="6.294" r="5"/>
+        <circle cx="16.854" cy="8.472" r="5"/>
+    g>
 </svg>
