@@ -1,12 +1,15 @@
-<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#18181b" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <!-- The main outer circle -->
-        <circle cx="12" cy="12" r="10"/>
-        <!-- The 5 lines that create 10 sections -->
-        <line x1="12" y1="2" x2="12" y2="22"/>
-        <line x1="5.146" y1="6.303" x2="18.854" y2="17.697"/>
-        <line x1="2.294" y1="14.854" x2="21.706" y2="9.146"/>
-        <line x1="2.294" y1="9.146" x2="21.706" y2="14.854"/>
-        <line x1="5.146" y1="17.697" x2="18.854" y2="6.303"/>
-    </g>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="gray" stroke-width="1.5">
+
+    <!-- Circle -->
+    <circle cx="200" cy="200" r="199.25"/>
+
+    <!-- Diameters dividing the circle into 10 sectors -->
+    <!-- A full circle is 360 degrees. For 10 sectors, each dividing line is 36 degrees apart. -->
+    <line x1="0" y1="200" x2="400" y2="200" transform="rotate(0, 200, 200)" />
+    <line x1="0" y1="200" x2="400" y2="200" transform="rotate(36, 200, 200)" />
+    <line x1="0" y1="200" x2="400" y2="200" transform="rotate(72, 200, 200)" />
+    <line x1="0" y1="200" x2="400" y2="200" transform="rotate(108, 200, 200)" />
+    <line x1="0" y1="200" x2="400" y2="200" transform="rotate(144, 200, 200)" />
+  </g>
 </svg>
