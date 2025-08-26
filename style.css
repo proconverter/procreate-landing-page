@@ -1,71 +1,57 @@
-/* --- Features Section Styles (Corrected for Consistency) --- */
-.features {
-    gap: 40px; /* Space between title and first feature */
+/* --- Global Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.feature-item {
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5e5;
+    color: #18181b;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px; /* REDUCED: Tighter gap between elements */
-    max-width: 450px;
+    gap: 40px;
 }
 
-/* Add space between each feature item */
-.feature-item + .feature-item {
-    margin-top: 20px;
-}
+/* --- Typography --- */
+h1 { font-size: 48px; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; }
+h2 { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; text-align: center; }
+h3 { font-size: 18px; font-weight: 700; }
+p { font-size: 16px; max-width: 600px; }
+a { color: #007bff; text-decoration: none; font-weight: 700; }
 
-.feature-item .icon {
-    width: 48px; /* CORRECTED: Standardized to 48px */
-    height: 48px; /* CORRECTED: Standardized to 48px */
-    margin-bottom: 16px; /* Use margin for consistent space below icon */
-}
-
-.feature-item h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 0; /* REMOVED: Extra margin is no longer needed */
-}
-
-.feature-item p {
-    font-size: 16px;
-    color: #52525b;
-    line-height: 1.5;
-    max-width: 100%;
-}
-
-
-/* --- How It Works Section (Corrected for Consistency) --- */
-.how-it-works {
-    gap: 20px;
-}
-.steps-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 40px;
-    width: 100%;
-}
-.step {
-    flex: 1;
+/* --- Master Card Styling --- */
+.master-card {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 8px; /* Standardized gap */
+    gap: 30px;
 }
-.step .icon {
-    width: 48px; /* Standardized to 48px */
-    height: 48px; /* Standardized to 48px */
-    margin-bottom: 16px; /* Use margin for consistent space below icon */
+
+/* --- Content Sections --- */
+.hero, .app-proof, .cta, .how-it-works, .features, .faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
 }
-.step h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-.step p {
-    font-size: 16px;
-    color: #52525b;
-    line-height: 1.5;
-}
+
+.tagline { font-size: 20px; color: #52525b; }
+
+/*
