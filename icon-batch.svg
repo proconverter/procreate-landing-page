@@ -1,15 +1,15 @@
 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Outer Circle -->
-    <circle cx="12" cy="12" r="9"/>
+    <!-- Top Circle -->
+    <circle cx="12" cy="9" r="5"/>
     
-    <!-- 12 Spokes (6 rotated lines) -->
-    <!-- 360 degrees / 12 spokes = 30 degree increments -->
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(0, 12, 12)"/>
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(30, 12, 12)"/>
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(60, 12, 12)"/>
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(90, 12, 12)"/>
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(120, 12, 12)"/>
-    <line x1="12" y1="3" x2="12" y2="21" transform="rotate(150, 12, 12)"/>
+    <!-- Bottom Circle -->
+    <circle cx="12" cy="15" r="5"/>
+    
+    <!-- Left Circle -->
+    <circle cx="9" cy="12" r="5"/>
+    
+    <!-- Right Circle -->
+    <circle cx="15" cy="12" r="5"/>
   </g>
 </svg>
