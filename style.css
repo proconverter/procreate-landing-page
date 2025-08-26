@@ -43,7 +43,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .app-proof, .cta, .how-it-works, .features, .faq {
+.hero, .app-proof, .cta, .how-it-works {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,4 +54,169 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 .tagline { font-size: 20px; color: #52525b; }
 
-/*
+/* --- App Proof & Hover Effect --- */
+.app-proof-link {
+    display: block;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    line-height: 0;
+}
+.app-proof img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    transition: filter 0.3s ease;
+}
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.app-proof-link:hover img {
+    filter: blur(2px);
+}
+.app-proof-link:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* --- CTA Section --- */
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+.cta-button:hover { transform: scale(1.05); }
+
+/* --- Value Proposition List (Original Style) --- */
+.value-proposition {
+    margin-top: 30px;
+    text-align: center;
+}
+.value-prop-title {
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.value-prop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+    max-width: 450px;
+    color: #495057;
+}
+.value-prop-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.value-prop-list svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.section-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 20px 0;
+}
+
+/* --- How It Works Section --- */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.step .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+}
+
+/* --- FAQ Section (Outside Master Card) --- */
+.faq {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+.faq-item {
+    width: 100%;
+    max-width: 600px;
+}
+.faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.faq-item p {
+    color: #52525b;
+}
+
+/* --- Footer --- */
+.page-footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    color: #71717a;
+}
+.page-footer a {
+    color: #71717a;
+    text-decoration: underline;
+}
+.page-footer a:hover {
+    color: #007bff;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    .master-card { padding: 40px 20px; }
+    .mobile-break { display: none; }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-break { display: block; }
+}
