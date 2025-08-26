@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#18181b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9.83 9.83a4.24 4.24 0 1 0 0 6.34M14.17 14.17a4.24 4.24 0 1 0 0-6.34"/>
-    <path d="M9.83 16.17L14.17 9.83"/>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <g fill="none" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- 1. The main outer circle -->
+    <!-- Radius is 47 to leave 3 units of padding for the stroke -->
+    <circle cx="50" cy="50" r="47"/>
+    
+    <!-- 2. The top inner circle -->
+    <!-- It's tangent to the main circle at the top and the center point (50,50) -->
+    <circle cx="50" cy="26.5" r="23.5"/>
+    
+    <!-- 3. The bottom inner circle -->
+    <!-- It's tangent to the main circle at the bottom and the center point (50,50) -->
+    <circle cx="50" cy="73.5" r="23.5"/>
+    
+    <!-- 4. The small circle at the absolute center -->
+    <!-- Its radius is chosen to visually match the source image -->
+    <circle cx="50" cy="50" r="12"/>
+    
+  </g>
 </svg>
