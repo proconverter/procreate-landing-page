@@ -43,7 +43,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .app-proof, .cta, .how-it-works {
+.hero, .cta, .how-it-works {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,8 +53,51 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 .tagline { font-size: 20px; color: #52525b; }
-.app-proof img { width: 100%; max-width: 600px; border-radius: 16px; }
 
+/* MODIFICATION: Styles for the clickable image link and hover effect */
+.app-proof-link {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    text-decoration: none;
+}
+.app-proof {
+    position: relative; /* Required for the overlay */
+    border-radius: 16px;
+    overflow: hidden; /* Ensures the overlay respects the border radius */
+    line-height: 0; /* Removes extra space below the image */
+}
+.app-proof img {
+    width: 100%;
+    border-radius: 16px;
+    transition: filter 0.3s ease;
+}
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6 );
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allows clicks to go through to the link */
+}
+.app-proof-link:hover .app-proof img {
+    filter: blur(2px);
+}
+.app-proof-link:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* --- CTA and Value Proposition --- */
 .cta-button {
     display: inline-block;
     background-color: #007bff;
@@ -64,17 +107,50 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     font-size: 18px;
     font-weight: 700;
     transition: transform 0.2s ease;
+    white-space: nowrap; /* Prevents the button from wrapping */
 }
 .cta-button:hover { transform: scale(1.05); }
-.value-prop { font-size: 14px; color: #71717a; max-width: 500px; }
 
+/* MODIFICATION: Styles to align the value prop list */
+.value-prop-list {
+    margin-top: 20px;
+    display: inline-block; /* Allows the element to have a width but still be centered */
+    text-align: left; /* Aligns text inside the box to the left */
+}
+.value-prop-list .list-title {
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.value-prop-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.value-prop-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #52525b;
+}
+.value-prop-list li svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #28a745;
+}
+
+/* --- Divider and How-It-Works Section --- */
 .section-divider {
     width: 100%;
     border: none;
     border-top: 1px solid #e5e5e5;
     margin: 20px 0;
 }
-
 .steps-container {
     display: flex;
     justify-content: space-between;
@@ -88,25 +164,33 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* UPDATED: Changed gap to margin for more specific control */
 }
 .icon {
     width: 48px;
     height: 48px;
-    margin-bottom: 24px; /* UPDATED: Added more space below the icon */
+    margin-bottom: 24px;
 }
 
-/* --- Etsy Offer Section --- */
-.etsy-offer {
-    /* UPDATED: Removed border and adjusted padding */
+/* --- MODIFICATION: Centered Footer --- */
+.page-footer {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 15px;
+    font-size: 14px;
+    color: #71717a;
+    width: 100%; /* Ensures it takes full width of the page-wrapper */
 }
-.etsy-offer h3 { font-size: 24px; font-weight: 700; }
+.page-footer p {
+    max-width: 100%; /* Overrides the global p style for centering */
+    margin-bottom: 5px;
+}
+.page-footer a {
+    color: #71717a;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.page-footer a:hover {
+    color: #007bff;
+}
 
 /* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
@@ -114,99 +198,9 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     h2 { font-size: 28px; }
     .steps-container { flex-direction: column; }
     .master-card { padding: 40px 20px; }
-    
-    /* NEW: Hides the line break on desktop */
     .mobile-break { display: none; }
 }
 
 @media (max-width: 480px) {
-    /* NEW: Shows the line break only on small mobile screens */
     .mobile-break { display: block; }
 }
-
-/* --- ADD THESE STYLES TO THE END OF YOUR CSS FILE --- */
-
-/* --- Header for Launch App Button --- */
-.page-header {
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.launch-app-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    transition: background-color 0.2s ease;
-}
-
-.launch-app-button:hover {
-    background-color: #0056b3;
-}
-
-/* --- Styling for the new Value Prop List --- */
-.value-prop-list {
-    margin-top: 20px;
-    max-width: 500px;
-    width: 100%;
-}
-
-.value-prop-list .list-title {
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.value-prop-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.value-prop-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #52525b;
-}
-
-.value-prop-list li svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    margin-top: 3px;
-    color: #28a745;
-}
-
-/* --- Standard Page Footer --- */
-.page-footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #71717a;
-}
-
-.page-footer p {
-    margin-bottom: 5px;
-}
-
-.page-footer a {
-    color: #71717a;
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-.page-footer a:hover {
-    color: #007bff;
-}
-
