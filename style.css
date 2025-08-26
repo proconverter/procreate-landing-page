@@ -231,3 +231,31 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 @media (max-width: 480px) {
     .mobile-break { display: block; }
 }
+
+/* --- FAQ Section Styles --- */
+.faq {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the title */
+    gap: 30px; /* Space between title and first item */
+    text-align: left; /* Align FAQ text to the left */
+}
+
+.faq-item {
+    width: 100%;
+    max-width: 600px; /* Match the width of other text for alignment */
+    margin-bottom: 15px; /* Space between each Q&A pair */
+}
+
+.faq-item h3 {
+    font-size: 16px; /* Slightly smaller than section titles */
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    color: #52525b;
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
