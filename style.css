@@ -1,156 +1,45 @@
-/* --- Global Styles & Resets --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #e5e5e5;
-    color: #18181b;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.page-wrapper {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* --- Typography --- */
-h1 { font-size: 48px; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; }
-h2 { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; text-align: center; }
-h3 { font-size: 18px; font-weight: 700; }
-p { font-size: 16px; max-width: 600px; }
-a { color: #007bff; text-decoration: none; font-weight: 700; }
-
-/* --- Master Card Styling --- */
-.master-card {
-    background-color: #ffffff;
-    padding: 50px 40px;
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-}
-
-/* --- Content Sections --- */
-.hero, .app-proof, .cta, .how-it-works, .features, .faq {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.tagline { font-size: 20px; color: #52525b; }
-
-/* --- App Proof & Hover Effect --- */
-.app-proof-link {
-    display: block;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden; /* Important for the overlay effect */
-    line-height: 0; /* Removes extra space below the image */
-}
-.app-proof img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 16px;
-    transition: filter 0.3s ease;
-}
-.hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.app-proof-link:hover img {
-    filter: blur(2px);
-}
-.app-proof-link:hover .hover-overlay {
-    opacity: 1;
-}
-
-/* --- CTA Section --- */
-.cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-    margin-bottom: 30px; /* Space between button and features */
-}
-.cta-button:hover { transform: scale(1.05); }
-
-.section-divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 20px 0;
-}
-
-/* --- Features Section Styles (UPDATED) --- */
+/* --- Features Section Styles (Corrected for Consistency) --- */
 .features {
-    gap: 40px; /* Space between title and the container */
+    gap: 40px; /* Space between title and first feature */
 }
-.features-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    width: 100%;
-}
+
 .feature-item {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 8px; /* REDUCED: Tighter gap between elements */
+    max-width: 450px;
 }
+
+/* Add space between each feature item */
+.feature-item + .feature-item {
+    margin-top: 20px;
+}
+
 .feature-item .icon {
-    /* UPDATED: Adjusted for 100x100 icons */
-    width: 64px; 
-    height: 64px;
-    margin-bottom: 24px;
+    width: 48px; /* CORRECTED: Standardized to 48px */
+    height: 48px; /* CORRECTED: Standardized to 48px */
+    margin-bottom: 16px; /* Use margin for consistent space below icon */
 }
+
 .feature-item h3 {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 8px;
-    min-height: 44px; /* Ensures consistent height for titles */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.feature-item p {
-    font-size: 15px;
-    color: #52525b;
-    line-height: 1.5;
+    margin-top: 0; /* REMOVED: Extra margin is no longer needed */
 }
 
-/* --- How It Works Section --- */
+.feature-item p {
+    font-size: 16px;
+    color: #52525b;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+
+/* --- How It Works Section (Corrected for Consistency) --- */
+.how-it-works {
+    gap: 20px;
+}
 .steps-container {
     display: flex;
     justify-content: space-between;
@@ -164,67 +53,19 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 8px; /* Standardized gap */
 }
 .step .icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 24px;
+    width: 48px; /* Standardized to 48px */
+    height: 48px; /* Standardized to 48px */
+    margin-bottom: 16px; /* Use margin for consistent space below icon */
 }
-
-/* --- FAQ Section Styles --- */
-.faq {
-    gap: 30px;
-    text-align: left;
+.step h3 {
+    font-size: 18px;
+    font-weight: 700;
 }
-.faq-item {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 15px;
-}
-.faq-item h3 {
+.step p {
     font-size: 16px;
-    margin-bottom: 8px;
-}
-.faq-item p {
     color: #52525b;
-    max-width: 100%;
-}
-
-/* --- Footer --- */
-.page-footer {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    color: #71717a;
-}
-.page-footer a {
-    color: #71717a;
-    text-decoration: underline;
-}
-.page-footer a:hover {
-    color: #007bff;
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    h1 { font-size: 36px; }
-    h2 { font-size: 28px; }
-    .master-card { padding: 40px 20px; }
-    .mobile-break { display: none; }
-
-    .features-container,
-    .steps-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .feature-item {
-        max-width: 300px; 
-    }
-}
-
-@media (max-width: 480px) {
-    .mobile-break { display: block; }
+    line-height: 1.5;
 }
