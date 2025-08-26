@@ -1,15 +1,15 @@
-<svg width="48" height="48" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <!-- Top Circle -->
-    <circle cx="50" cy="30" r="30"/>
+    <circle cx="12" cy="7" r="5"/>
     
     <!-- Bottom Circle -->
-    <circle cx="50" cy="70" r="30"/>
+    <circle cx="12" cy="17" r="5"/>
     
     <!-- Left Circle -->
-    <circle cx="30" cy="50" r="30"/>
+    <circle cx="7" cy="12" r="5"/>
     
     <!-- Right Circle -->
-    <circle cx="70" cy="50" r="30"/>
+    <circle cx="17" cy="12" r="5"/>
   </g>
 </svg>
