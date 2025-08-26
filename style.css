@@ -20,7 +20,7 @@ body {
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px; /* Adjusted gap */
 }
 
 /* --- Typography --- */
@@ -121,14 +121,12 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     color: #18181b;
     margin-bottom: 15px;
     font-size: 16px;
-    /* MODIFICATION: Center the title text */
     text-align: center;
 }
 .value-prop-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* MODIFICATION: Add padding to indent the list items */
     padding-left: 15px;
 }
 .value-prop-list li {
@@ -172,6 +170,32 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     width: 48px;
     height: 48px;
     margin-bottom: 24px;
+}
+
+/* --- Etsy Offer Section --- */
+.etsy-offer {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    background-color: #f0f0f0; /* A slightly different background to make it stand out */
+    border-radius: 16px;
+}
+.etsy-offer h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+.etsy-offer p {
+    color: #52525b;
+}
+.etsy-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: underline;
 }
 
 /* --- Centered Footer --- */
