@@ -1,14 +1,16 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
 
-    <!-- Circle -->
-    <circle cx="24" cy="24" r="20"/>
+    <!-- The main outer circle -->
+    <!-- Radius is 47 to create a 3-unit padding for the stroke -->
+    <circle cx="50" cy="50" r="47"/>
 
-    <!-- Diameters dividing the circle into 10 sectors -->
-    <line x1="4" y1="24" x2="44" y2="24" transform="rotate(0, 24, 24)" />
-    <line x1="4" y1="24" x2="44" y2="24" transform="rotate(36, 24, 24)" />
-    <line x1="4" y1="24" x2="44" y2="24" transform="rotate(72, 24, 24)" />
-    <line x1="4" y1="24" x2="44" y2="24" transform="rotate(108, 24, 24)" />
-    <line x1="4" y1="24" x2="44" y2="24" transform="rotate(144, 24, 24)" />
+    <!-- The 5 diameters that create the 10 sectors -->
+    <!-- The line coordinates (3, 50) to (97, 50) match the edges of the circle's path -->
+    <line x1="3" y1="50" x2="97" y2="50" transform="rotate(0, 50, 50)" />
+    <line x1="3" y1="50" x2="97" y2="50" transform="rotate(36, 50, 50)" />
+    <line x1="3" y1="50" x2="97" y2="50" transform="rotate(72, 50, 50)" />
+    <line x1="3" y1="50" x2="97" y2="50" transform="rotate(108, 50, 50)" />
+    <line x1="3" y1="50" x2="97" y2="50" transform="rotate(144, 50, 50)" />
   </g>
 </svg>
