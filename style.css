@@ -20,7 +20,7 @@ body {
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Adjusted gap */
+    gap: 40px;
 }
 
 /* --- Typography --- */
@@ -43,7 +43,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .cta, .how-it-works {
+.hero, .app-proof, .cta, .how-it-works, .features, .faq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,21 +54,17 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 .tagline { font-size: 20px; color: #52525b; }
 
-/* --- Clickable Image Link & Hover Effect --- */
+/* --- App Proof & Hover Effect --- */
 .app-proof-link {
     display: block;
-    width: 100%;
-    max-width: 600px;
-    text-decoration: none;
-}
-.app-proof {
     position: relative;
     border-radius: 16px;
-    overflow: hidden;
-    line-height: 0;
+    overflow: hidden; /* Important for the overlay effect */
+    line-height: 0; /* Removes extra space below the image */
 }
 .app-proof img {
     width: 100%;
+    max-width: 600px;
     border-radius: 16px;
     transition: filter 0.3s ease;
 }
@@ -76,28 +72,26 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: 700;
-    border-radius: 16px;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none;
 }
-.app-proof-link:hover .app-proof img {
+.app-proof-link:hover img {
     filter: blur(2px);
 }
 .app-proof-link:hover .hover-overlay {
     opacity: 1;
 }
 
-/* --- CTA and Value Proposition --- */
+/* --- CTA Section --- */
 .cta-button {
     display: inline-block;
     background-color: #007bff;
@@ -107,51 +101,56 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     font-size: 18px;
     font-weight: 700;
     transition: transform 0.2s ease;
-    white-space: nowrap;
+    margin-bottom: 30px; /* Space between button and features */
 }
 .cta-button:hover { transform: scale(1.05); }
 
-.value-prop-list {
-    margin-top: 20px;
-    display: inline-block;
-    text-align: left;
-}
-.value-prop-list .list-title {
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 15px;
-    font-size: 16px;
-    text-align: center;
-}
-.value-prop-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-left: 15px;
-}
-.value-prop-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #52525b;
-}
-.value-prop-list li svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    margin-top: 3px;
-    color: #28a745;
-}
-
-/* --- Divider and How-It-Works Section --- */
 .section-divider {
     width: 100%;
     border: none;
     border-top: 1px solid #e5e5e5;
     margin: 20px 0;
 }
+
+/* --- Features Section Styles (UPDATED) --- */
+.features {
+    gap: 40px; /* Space between title and the container */
+}
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+.feature-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.feature-item .icon {
+    /* UPDATED: Adjusted for 100x100 icons */
+    width: 64px; 
+    height: 64px;
+    margin-bottom: 24px;
+}
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    min-height: 44px; /* Ensures consistent height for titles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature-item p {
+    font-size: 15px;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+/* --- How It Works Section --- */
 .steps-container {
     display: flex;
     justify-content: space-between;
@@ -166,96 +165,66 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     align-items: center;
     text-align: center;
 }
-.icon {
+.step .icon {
     width: 48px;
     height: 48px;
     margin-bottom: 24px;
 }
 
-/* --- Etsy Offer Section --- */
-.etsy-offer {
-    padding: 30px 20px;
+/* --- FAQ Section Styles --- */
+.faq {
+    gap: 30px;
+    text-align: left;
+}
+.faq-item {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+.faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.faq-item p {
+    color: #52525b;
+    max-width: 100%;
+}
+
+/* --- Footer --- */
+.page-footer {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 15px;
-    background-color: #f0f0f0; /* A slightly different background to make it stand out */
-    border-radius: 16px;
-}
-.etsy-offer h3 {
-    font-size: 24px;
-    font-weight: 700;
-}
-.etsy-offer p {
-    color: #52525b;
-}
-.etsy-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: 700;
-    color: #007bff;
-    text-decoration: underline;
-}
-
-/* --- Centered Footer --- */
-.page-footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
+    gap: 10px;
     color: #71717a;
-    width: 100%;
-}
-.page-footer p {
-    max-width: 100%;
-    margin-bottom: 5px;
 }
 .page-footer a {
     color: #71717a;
-    font-weight: 500;
     text-decoration: underline;
 }
 .page-footer a:hover {
     color: #007bff;
 }
 
-/* --- Responsive Design for Mobile --- */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
-    .steps-container { flex-direction: column; }
     .master-card { padding: 40px 20px; }
     .mobile-break { display: none; }
+
+    .features-container,
+    .steps-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .feature-item {
+        max-width: 300px; 
+    }
 }
 
 @media (max-width: 480px) {
     .mobile-break { display: block; }
 }
-
-/* --- FAQ Section Styles --- */
-.faq {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the title */
-    gap: 30px; /* Space between title and first item */
-    text-align: left; /* Align FAQ text to the left */
-}
-
-.faq-item {
-    width: 100%;
-    max-width: 600px; /* Match the width of other text for alignment */
-    margin-bottom: 15px; /* Space between each Q&A pair */
-}
-
-.faq-item h3 {
-    font-size: 16px; /* Slightly smaller than section titles */
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.faq-item p {
-    color: #52525b;
-    max-width: 100%; /* Ensure it doesn't overflow */
-}
-
