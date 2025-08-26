@@ -1,125 +1,97 @@
-/* --- Global Styles & Resets --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procreate Brush Converter | Instantly Convert .brushset to PNG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #e5e5e5;
-    color: #18181b;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
+    <div class="page-wrapper">
 
-.page-wrapper {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
+        <!-- MODIFICATION: Added a simple header for the Launch App button -->
+        <header class="page-header">
+            <a href="https://procreate-app-z2z6.onrender.com" class="launch-app-button">Launch App</a>
+        </header>
 
-/* --- Typography --- */
-h1 { font-size: 48px; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; }
-h2 { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; text-align: center; }
-h3 { font-size: 18px; font-weight: 700; }
-p { font-size: 16px; max-width: 600px; }
-a { color: #007bff; text-decoration: none; font-weight: 700; }
+        <div class="master-card">
+            <header class="hero">
+                <h1>The Last Procreate Brush Converter You'll Ever Need.</h1>
+                <p class="tagline">Instantly extract your `.brushset` files into ready-to-use PNGs. Fast, private, and ready in a single click.</p>
+            </header>
 
-/* --- Master Card Styling --- */
-.master-card {
-    background-color: #ffffff;
-    padding: 50px 40px;
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-}
+            <section class="app-proof">
+                <!-- Assuming your image is named app-screenshot.png and in the same folder -->
+                <img src="app-screenshot.png" alt="A clean, simple, and easy to use interface for the brush converter app.">
+            </section>
 
-/* --- Content Sections --- */
-.hero, .app-proof, .cta, .how-it-works {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    width: 100%;
-}
+            <section class="cta">
+                <!-- MODIFICATION 1: Updated CTA Button Text -->
+                <a href="https://presentandcherish.lemonsqueezy.com/buy/9fac6a82-c127-4b2e-845d-dec42c9f33ce" target="_blank" class="cta-button">Get Instant Access - $9.99</a>
+                
+                <!-- MODIFICATION 2: Replaced the <p> with the detailed value proposition list -->
+                <div class="value-prop-list">
+                    <p class="list-title">Your one-time purchase unlocks:</p>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>10 Conversion Credits:</strong> Each credit handles a full conversion session.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>Batch Processing:</strong> Convert multiple .brushset files in one go.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>Lossless PNG Extraction:</strong> We extract the original stamp image without quality loss.</div>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div><strong>No Expiration:</strong> Use your credits whenever you need them. No subscriptions, no hidden fees.</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-.tagline { font-size: 20px; color: #52525b; }
-.app-proof img { width: 100%; max-width: 600px; border-radius: 16px; }
+            <hr class="section-divider">
 
-.cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-}
-.cta-button:hover { transform: scale(1.05); }
-.value-prop { font-size: 14px; color: #71717a; max-width: 500px; }
+            <section class="how-it-works">
+                <h2>A Seamless Workflow.<br class="mobile-break"> By Design.</h2>
+                <div class="steps-container">
+                    <!-- MODIFICATION 3: Updated the text for all three steps -->
+                    <div class="step">
+                        <img src="icon-upload.svg" alt="Upload Brushes icon" class="icon">
+                        <h3>1. Upload Your Brushes</h3>
+                        <p>Enter your license key into the converter and upload your `.brushset` files.</p>
+                    </div>
+                    <div class="step">
+                        <img src="icon-convert.svg" alt="Convert icon" class="icon">
+                        <h3>2. Convert Instantly</h3>
+                        <p>Our tool securely processes your files, extracting each stamp image in seconds.</p>
+                    </div>
+                    <div class="step">
+                        <img src="icon-download.svg" alt="Download PNGs icon" class="icon">
+                        <h3>3. Download Your PNGs</h3>
+                        <p>Receive a perfectly organized `.zip` file with your ready-to-use PNGs.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-.section-divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 20px 0;
-}
+        <!-- MODIFICATION 4: Replaced the Etsy offer with a standard footer -->
+        <footer class="page-footer">
+            <p>&copy; 2025 PresentAndCherish. All rights reserved.</p>
+            <p>
+                <a href="YOUR_TRELLO_FEEDBACK_URL" target="_blank">Feedback</a> | 
+                <a href="YOUR_TERMS_URL" target="_blank">Terms & Privacy</a>
+            </p>
+        </footer>
 
-.steps-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 40px;
-    width: 100%;
-}
-.step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* UPDATED: Changed gap to margin for more specific control */
-}
-.icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 24px; /* UPDATED: Added more space below the icon */
-}
+    </div>
 
-/* --- Etsy Offer Section --- */
-.etsy-offer {
-    /* UPDATED: Removed border and adjusted padding */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-}
-.etsy-offer h3 { font-size: 24px; font-weight: 700; }
-
-/* --- Responsive Design for Mobile --- */
-@media (max-width: 768px) {
-    h1 { font-size: 36px; }
-    h2 { font-size: 28px; }
-    .steps-container { flex-direction: column; }
-    .master-card { padding: 40px 20px; }
-    
-    /* NEW: Hides the line break on desktop */
-    .mobile-break { display: none; }
-}
-
-@media (max-width: 480px) {
-    /* NEW: Shows the line break only on small mobile screens */
-    .mobile-break { display: block; }
-}
+</body>
+</html>
