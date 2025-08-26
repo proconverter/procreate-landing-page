@@ -1,266 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procreate Brush Converter | Convert .brushset to PNG</title>
-    <meta name="description" content="The easiest way to convert your Procreate .brushset stamp files into ready-to-use PNG files. Fast, secure, and no software to install.">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            padding: 20px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: 700;
-            font-size: 24px;
-            text-decoration: none;
-            color: #333;
-        }
-        .launch-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            background-color: #007bff;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-        }
-        .launch-button:hover {
-            background-color: #0056b3;
-        }
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #000;
-        }
-        .hero p.subtitle {
-            font-size: 18px;
-            color: #555;
-            max-width: 550px;
-            margin: 0 auto 30px;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #fff;
-            background-color: #007bff;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-        .cta-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-        .value-proposition {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .value-proposition-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px auto 0;
-            display: inline-block;
-            text-align: left;
-            max-width: 480px;
-            color: #495057;
-            font-size: 15px;
-        }
-        .value-proposition-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-        }
-        .value-proposition-list svg {
-            width: 18px;
-            height: 18px;
-            margin-right: 12px;
-            flex-shrink: 0;
-            margin-top: 3px;
-            color: #28a745;
-        }
-        .app-visual {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .app-visual img {
-            max-width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        .how-it-works {
-            padding: 60px 0;
-            background-color: #fff;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-        .steps-container {
-            display: flex;
-            justify-content: space-around;
-            gap: 40px;
-        }
-        .step {
-            max-width: 250px;
-        }
-        .step-icon {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 20px;
-        }
-        .step h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .step p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .footer {
-            padding: 40px 0;
-            text-align: center;
-            font-size: 14px;
-            color: #6c757d;
-            border-top: 1px solid #e0e0e0;
-        }
-        .footer a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .hero p.subtitle { font-size: 16px; }
-            .steps-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .step { margin-bottom: 40px; }
-            .step:last-child { margin-bottom: 0; }
-        }
-    </style>
-</head>
-<body>
+/* --- Global Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">Brush Converter</a>
-            <!-- "Launch App" Button -->
-            <a href="https://procreate-app-z2z6.onrender.com" class="launch-button">Launch App</a>
-        </div>
-    </header>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5e5;
+    color: #18181b;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>The Easiest Way to Convert Procreate Stamps to PNG</h1>
-                <p class="subtitle">Instantly extract stamp images from your .brushset files. No software, no hassle. Just upload your files and download ready-to-use PNGs in seconds.</p>
-                
-                <!-- Revised CTA Button -->
-                <a href="https://presentandcherish.lemonsqueezy.com/buy/9fac6a82-c127-4b2e-845d-dec42c9f33ce" target="_blank" class="cta-button">Get Instant Access - $9.99</a>
-                
-                <!-- Revised Value Proposition -->
-                <div class="value-proposition">
-                    <p style="font-weight: 500; margin-bottom: 8px; color: #333;">Your one-time purchase unlocks:</p>
-                    <ul class="value-proposition-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div><strong>10 Conversion Credits:</strong> Each credit handles a full conversion session.</div>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div><strong>Batch Processing:</strong> Convert multiple .brushset files in one go.</div>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div><strong>Lossless PNG Extraction:</strong> We extract the original stamp image without quality loss.</div>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div><strong>No Expiration:</strong> Use your credits whenever you need them. No subscriptions, no hidden fees.</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+.page-wrapper {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 
-        <!-- App Visual Section -->
-        <section class="app-visual">
-            <div class="container">
-                <img src="https://i.imgur.com/3nI7wYg.jpeg" alt="Screenshot of the Procreate Brush Converter application interface">
-            </div>
-        </section>
+/* --- Typography --- */
+h1 { font-size: 48px; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; }
+h2 { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; text-align: center; }
+h3 { font-size: 18px; font-weight: 700; }
+p { font-size: 16px; max-width: 600px; }
+a { color: #007bff; text-decoration: none; font-weight: 700; }
 
-        <section class="how-it-works">
-            <div class="container">
-                <h2 class="section-title">How It Works in 3 Simple Steps</h2>
-                <div class="steps-container">
-                    <div class="step">
-                        <!-- Your Custom Icon -->
-                        <img src="https://i.imgur.com/uS0nJmC.png" alt="Upload Icon" class="step-icon">
-                        <h3>1. Upload</h3>
-                        <p>Enter your license key and select one or more .brushset files from your device.</p>
-                    </div>
-                    <div class="step">
-                        <!-- Your Custom Icon -->
-                        <img src="https://i.imgur.com/bO3oZzP.png" alt="Convert Icon" class="step-icon">
-                        <h3>2. Convert</h3>
-                        <p>Our tool securely processes your files, extracting each stamp image instantly.</p>
-                    </div>
-                    <div class="step">
-                        <!-- Your Custom Icon -->
-                        <img src="https://i.imgur.com/Qk1jZ8A.png" alt="Download Icon" class="step-icon">
-                        <h3>3. Download</h3>
-                        <p>Get a neatly packaged .zip file containing all your stamps as individual PNGs.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+/* --- Master Card Styling --- */
+.master-card {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
 
-    <footer class="footer">
-        <p>&copy; 2025 PresentAndCherish. All rights reserved.</p>
-        <p>
-            <!-- Updated Footer Links -->
-            <a href="YOUR_TRELLO_FEEDBACK_URL" target="_blank">Feedback</a> | 
-            <a href="YOUR_TERMS_URL" target="_blank">Terms & Privacy</a>
-        </p>
-    </footer>
+/* --- Content Sections --- */
+.hero, .app-proof, .cta, .how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+}
 
-</body>
-</html>
+.tagline { font-size: 20px; color: #52525b; }
+.app-proof img { width: 100%; max-width: 600px; border-radius: 16px; }
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+.cta-button:hover { transform: scale(1.05); }
+.value-prop { font-size: 14px; color: #71717a; max-width: 500px; }
+
+.section-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 20px 0;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* UPDATED: Changed gap to margin for more specific control */
+}
+.icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px; /* UPDATED: Added more space below the icon */
+}
+
+/* --- Etsy Offer Section --- */
+.etsy-offer {
+    /* UPDATED: Removed border and adjusted padding */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+.etsy-offer h3 { font-size: 24px; font-weight: 700; }
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    .steps-container { flex-direction: column; }
+    .master-card { padding: 40px 20px; }
+    
+    /* NEW: Hides the line break on desktop */
+    .mobile-break { display: none; }
+}
+
+@media (max-width: 480px) {
+    /* NEW: Shows the line break only on small mobile screens */
+    .mobile-break { display: block; }
+}
