@@ -113,27 +113,29 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .feature-item h3 { margin-top: 8px; }
 .feature-item p { font-size: 16px; color: #52525b; max-width: 100%; }
 
-/* --- Etsy & Page Footer --- */
-.etsy-offer {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-}
-.etsy-offer h3 { font-size: 24px; font-weight: 700; }
-.etsy-offer a { color: #007bff; }
-.etsy-offer a:hover { text-decoration: underline; }
-
+/* --- Page Footer (Combined) --- */
 .page-footer {
     padding: 20px;
     text-align: center;
     font-size: 14px;
     color: #71717a;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased gap for more space */
 }
-.page-footer a { color: #71717a; text-decoration: underline; }
-.page-footer a:hover { color: #18181b; }
+.etsy-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.etsy-offer h3 { font-size: 24px; font-weight: 700; color: #18181b; }
+.etsy-offer p { color: #52525b; }
+.etsy-offer a { color: #007bff; }
+.etsy-offer a:hover { text-decoration: underline; }
+
+.main-footer-links a { color: #71717a; text-decoration: underline; }
+.main-footer-links a:hover { color: #18181b; }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
@@ -146,10 +148,10 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     .mobile-break { display: block; }
 }
 
-/* --- NEW: Accordion FAQ Styles --- */
+/* --- Accordion FAQ Styles --- */
 .faq {
-    max-width: 100%; /* Allow it to take full width */
-    text-align: left; /* Align text to the left */
+    max-width: 100%;
+    text-align: left;
 }
 .faq-item {
     border-bottom: 1px solid #e5e5e5;
@@ -179,12 +181,48 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     font-size: 16px;
     line-height: 1.6;
 }
-/* Styles for when the accordion item is open */
 .faq-item.open .faq-answer {
-    max-height: 300px; /* Adjust if your answers are very long */
+    max-height: 500px; /* Increased for form */
     padding-top: 15px;
     transition: max-height 0.4s ease-in, padding-top 0.4s ease-in;
 }
 .faq-item.open .faq-question .icon {
     transform: rotate(45deg);
+}
+
+/* --- Contact Form Styles --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background-color: #f4f4f5;
+}
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact-form button {
+    align-self: flex-start;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #18181b;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+.contact-form button:hover {
+    background-color: #3f3f46;
 }
