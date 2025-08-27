@@ -56,7 +56,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 .tagline { font-size: 20px; color: #52525b; }
 
-/* START: UPDATED APP PROOF / SCREENSHOT SECTION */
+/* --- App Proof / Screenshot --- */
 .app-proof { position: relative; }
 .app-link-wrapper { display: block; text-decoration: none; }
 .app-proof img { width: 100%; max-width: 600px; border-radius: 16px; display: block; }
@@ -67,52 +67,50 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparent; /* Start transparent */
+    background-color: transparent;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-    transition: background-color 0.3s ease; /* Transition the background */
+    transition: background-color 0.3s ease;
 }
 
 .hover-overlay span {
     font-size: 18px;
     font-weight: 700;
     padding: 12px 24px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black button */
-    border: 1px solid rgba(255, 255, 255, 0.8); /* Subtle white border */
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    backdrop-filter: blur(5px); /* Frosted glass effect for modern browsers */
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    opacity: 0; /* Hidden by default on desktop */
-    transform: translateY(10px); /* Start slightly lower */
+    opacity: 0;
+    transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* --- Desktop Hover Behavior --- */
 @media (hover: hover) and (min-width: 769px) {
     .app-link-wrapper:hover .hover-overlay {
-        background-color: rgba(0, 0, 0, 0.5); /* Dim the image */
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .app-link-wrapper:hover .hover-overlay span {
-        opacity: 1; /* Show the button */
-        transform: translateY(0); /* Animate it up */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* --- Mobile (Touch) Behavior --- */
 @media (hover: none), (max-width: 768px) {
     .hover-overlay {
-        background-color: rgba(0, 0, 0, 0.25); /* Always slightly dim */
+        background-color: rgba(0, 0, 0, 0.25);
     }
     .hover-overlay span {
-        opacity: 1; /* Always visible */
-        transform: translateY(0); /* Always in position */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-/* END: UPDATED APP PROOF / SCREENSHOT SECTION */
-
 
 /* --- CTA Button --- */
 .cta-button {
@@ -167,14 +165,23 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .etsy-offer h3 { font-size: 24px; font-weight: 700; color: #18181b; }
 .etsy-offer p { color: #52525b; }
 
-.etsy-offer a {
-    color: #007bff;
+/* NEW BUTTON STYLE FOR ETSY OFFER */
+.etsy-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
     font-weight: 700;
-    text-decoration: underline;
-    transition: color 0.2s ease;
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
-.etsy-offer a:hover {
-    color: #0056b3;
+
+.etsy-button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3; /* Darken on hover */
+    color: #ffffff; /* Ensure text stays white */
 }
 
 .main-footer-links a { 
