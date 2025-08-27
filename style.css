@@ -132,7 +132,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .etsy-offer h3 { font-size: 24px; font-weight: 700; color: #18181b; }
 .etsy-offer p { color: #52525b; }
 
-/* Style the Etsy link to be blue and bold */
+/* This single rule targets the Etsy link specifically */
 .etsy-offer a {
     color: #007bff; /* Match the main CTA blue */
     font-weight: 700;
@@ -143,7 +143,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     color: #0056b3; /* A slightly darker blue for hover */
 }
 
-/* Style the main footer links (Terms & Privacy) to be subtle */
+/* This rule targets the "Terms & Privacy" link specifically */
 .main-footer-links a { 
     color: #71717a; /* Subtle grey */
     font-weight: 400; /* Normal font weight */
