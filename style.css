@@ -121,7 +121,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     color: #71717a;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Increased gap for more space */
+    gap: 40px;
 }
 .etsy-offer {
     display: flex;
@@ -131,23 +131,28 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 .etsy-offer h3 { font-size: 24px; font-weight: 700; color: #18181b; }
 .etsy-offer p { color: #52525b; }
-.etsy-offer a { color: #007bff; }
-.etsy-offer a:hover { text-decoration: underline; }
 
-/* START: UPDATED SECTION */
+/* START: LINK FEEDBACK UPDATE */
+.page-footer a {
+    color: #007bff; /* Match the main CTA blue */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+.page-footer a:hover {
+    color: #0056b3; /* A slightly darker blue for hover */
+}
+/* END: LINK FEEDBACK UPDATE */
+
 .main-footer-links {
     text-align: center; 
     width: 100%;
     display: flex;
     justify-content: center;
 }
-/* END: UPDATED SECTION */
-
 .main-footer-links a { 
     color: #71717a; 
     text-decoration: underline; 
 }
-
 .main-footer-links a:hover { color: #18181b; }
 
 /* --- Responsive Design --- */
@@ -155,10 +160,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
     .master-card { padding: 40px 20px; }
-    .mobile-break { display: none; }
-}
-@media (max-width: 480px) {
-    .mobile-break { display: block; }
 }
 
 /* --- Accordion FAQ Styles --- */
@@ -195,7 +196,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     line-height: 1.6;
 }
 .faq-item.open .faq-answer {
-    max-height: 500px; /* Increased for form */
+    max-height: 500px;
     padding-top: 15px;
     transition: max-height 0.4s ease-in, padding-top 0.4s ease-in;
 }
@@ -242,7 +243,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 /* --- Form Status & Reset Button Styles --- */
 #form-status {
-    display: flex; /* Changed to flex */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
@@ -250,11 +251,10 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     color: #166534;
     border-radius: 8px;
     margin-top: 15px;
-    /* The display property will be controlled by JS */
 }
 
 #reset-form-button {
-    color: #15803d; /* A slightly darker green for better contrast */
+    color: #15803d;
     font-weight: 700;
     text-decoration: underline;
     cursor: pointer;
@@ -263,4 +263,3 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 #reset-form-button:hover {
     color: #18181b;
 }
-
