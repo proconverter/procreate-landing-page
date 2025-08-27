@@ -81,29 +81,56 @@
 
             <hr class="section-divider">
 
+            <!-- NEW: Accordion FAQ HTML Structure -->
             <section class="faq">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-item">
-                    <h3>Do I need to install any software?</h3>
-                    <p>Not at all! Our converter is a web-based tool that works directly in your browser on any device, including desktops, iPads, and iPhones. All you need is your license key and your `.brushset` files.</p>
+                    <div class="faq-question">
+                        <span>Do I need to install any software?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all! Our converter is a web-based tool that works directly in your browser on any device, including desktops, iPads, and iPhones. All you need is your license key and your `.brushset` files.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>How do I find my `.brushset` files on my iPad to upload them?</h3>
-                    <p>That's a great question! On an iPad, you first need to export your brushes from Procreate to the Files app. It's a quick two-step process:  
+                    <div class="faq-question">
+                        <span>How do I find my `.brushset` files on my iPad to upload them?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>That's a great question! On an iPad, you first need to export your brushes from Procreate to the Files app. It's a quick two-step process:  
 1. In Procreate: Open the Brush Library, swipe left on the brush set you want to convert, and tap "Share".  
 2. Save to Files: In the share menu that pops up, choose "Save to Files". We recommend creating a new folder named "Brush Exports" to keep things organized.  
 Once you've done that, you can easily find and select the `.brushset` file from that folder when you use our converter tool.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Is it safe? Do you keep my brushes?</h3>
-                    <p>Your privacy is our top priority. We never store your `.brushset` files. They are processed on our secure servers and are automatically deleted within one hour of conversion.</p>
+                    <div class="faq-question">
+                        <span>Are the converted PNG files transparent?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To ensure maximum compatibility and processing speed, our tool currently extracts stamps with a solid white background. This guarantees a fast and reliable conversion every time.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Are the converted PNG files transparent?</h3>
-                    <p>To ensure maximum compatibility and processing speed, our tool currently extracts stamps with a solid white background. This guarantees a fast and reliable conversion every time.</p>
+                    <div class="faq-question">
+                        <span>Is it safe? Do you keep my brushes?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your privacy is our top priority. We never store your `.brushset` files. They are processed on our secure servers and are automatically deleted within one hour of conversion.</p>
+                    </div>
                 </div>
             </section>
         </div>
+
+        <footer class="etsy-offer">
+            <h3>Are you an Etsy user?</h3>
+            <p>We have a special place in our hearts for the Etsy community. We're offering a special discount to get you started.</p>
+            <a href="YOUR_ETSY_LISTING_LINK_HERE">View our Etsy-Exclusive Offer</a>
+        </footer>
 
         <footer class="page-footer">
             <p>&copy; 2025 Artypacks. All rights reserved.</p>
@@ -116,5 +143,7 @@ Once you've done that, you can easily find and select the `.brushset` file from 
 
     </div>
 
+    <!-- NEW: Link to the JavaScript file -->
+    <script src="main.js"></script>
 </body>
 </html>
