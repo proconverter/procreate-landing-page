@@ -56,14 +56,14 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 .tagline { font-size: 20px; color: #52525b; }
 
-/* START: UPDATED APP PROOF / SCREENSHOT SECTION FOR ZOOM EFFECT */
+/* --- App Proof / Screenshot --- */
 .app-proof { position: relative; }
 
 .app-link-wrapper { 
     display: block; 
     text-decoration: none; 
-    border-radius: 16px; /* Match the image's border-radius */
-    overflow: hidden; /* This is key: it crops the zoomed image */
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .app-proof img { 
@@ -71,7 +71,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     max-width: 600px; 
     border-radius: 16px; 
     display: block; 
-    transition: transform 0.4s ease; /* Add a smooth transition for the zoom */
+    transition: transform 0.4s ease;
 }
 
 .hover-overlay {
@@ -85,7 +85,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-    /* The background-color is now handled by the media queries */
     transition: background-color 0.3s ease;
 }
 
@@ -106,27 +105,26 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 /* --- Desktop Hover Behavior --- */
 @media (hover: hover) and (min-width: 769px) {
     .app-link-wrapper:hover img {
-        transform: scale(1.05); /* Zoom the image by 5% */
+        transform: scale(1.05);
     }
     
     .app-link-wrapper:hover .hover-overlay span {
-        opacity: 1; /* Show the button */
-        transform: translateY(0); /* Animate it up */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* --- Mobile (Touch) Behavior --- */
 @media (hover: none), (max-width: 768px) {
+    /* THIS RULE IS NOW EMPTY, REMOVING THE DIM EFFECT */
     .hover-overlay {
-        background-color: rgba(0, 0, 0, 0.25); /* Keep the slight dim for mobile */
+        /* No background-color, so no dimming */
     }
     .hover-overlay span {
-        opacity: 1; /* Always visible */
-        transform: translateY(0); /* Always in position */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-/* END: UPDATED APP PROOF / SCREENSHOT SECTION */
-
 
 /* --- CTA Button --- */
 .cta-button {
