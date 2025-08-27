@@ -239,3 +239,28 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .contact-form button:hover {
     background-color: #3f3f46;
 }
+
+/* --- Form Status & Reset Button Styles --- */
+#form-status {
+    display: flex; /* Changed to flex */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f0fdf4;
+    color: #166534;
+    border-radius: 8px;
+    margin-top: 15px;
+    /* The display property will be controlled by JS */
+}
+
+#reset-form-button {
+    color: #15803d; /* A slightly darker green for better contrast */
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#reset-form-button:hover {
+    color: #18181b;
+}
+
