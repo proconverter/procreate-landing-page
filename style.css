@@ -13,6 +13,8 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .page-wrapper {
@@ -43,7 +45,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .app-proof, .cta, .how-it-works, .features, .faq {
+.hero, .app-proof, .cta, .features, .how-it-works, .faq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,20 +56,10 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 
 .tagline { font-size: 20px; color: #52525b; }
 
-/* --- App Proof & Hover Effect --- */
-.app-proof-link {
-    display: block;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    line-height: 0;
-}
-.app-proof img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 16px;
-    transition: filter 0.3s ease;
-}
+/* --- App Proof / Screenshot --- */
+.app-proof { position: relative; }
+.app-link-wrapper { display: block; text-decoration: none; }
+.app-proof img { width: 100%; max-width: 600px; border-radius: 16px; display: block; }
 .hover-overlay {
     position: absolute;
     top: 0;
@@ -75,23 +67,19 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: 700;
+    border-radius: 16px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.app-proof-link:hover img {
-    filter: blur(2px);
-}
-.app-proof-link:hover .hover-overlay {
-    opacity: 1;
-}
+.app-link-wrapper:hover .hover-overlay { opacity: 1; }
 
-/* --- CTA Section --- */
+/* --- CTA Button --- */
 .cta-button {
     display: inline-block;
     background-color: #007bff;
@@ -101,7 +89,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     font-size: 18px;
     font-weight: 700;
     transition: transform 0.2s ease;
-    margin-bottom: 30px;
 }
 .cta-button:hover { transform: scale(1.05); }
 
@@ -112,111 +99,41 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     margin: 20px 0;
 }
 
-/* --- Features Section (Single-Column Layout) --- */
-.features {
-    gap: 40px;
-}
-
+/* --- Features & How-It-Works Sections --- */
 .feature-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    width: 100%;
     max-width: 450px;
 }
+.feature-item + .feature-item { margin-top: 20px; }
+.feature-icon { width: 48px; height: 48px; }
+.feature-item h3 { margin-top: 8px; }
+.feature-item p { font-size: 16px; color: #52525b; max-width: 100%; }
 
-.feature-item + .feature-item {
-    margin-top: 20px;
-}
-
-.feature-item .icon {
-    width: 48px; /* THIS IS THE FIX: Constrains the icon size */
-    height: 48px; /* THIS IS THE FIX: Constrains the icon size */
-    margin-bottom: 16px;
-}
-
-.feature-item h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.feature-item p {
-    font-size: 16px;
-    color: #52525b;
-    line-height: 1.5;
-    max-width: 100%;
-}
-
-/* --- How It Works Section --- */
-.how-it-works {
-    gap: 20px;
-}
-.steps-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 40px;
-    width: 100%;
-}
-.step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-}
-.step .icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 16px;
-}
-.step h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-.step p {
-    font-size: 16px;
-    color: #52525b;
-    line-height: 1.5;
-}
-
-/* --- FAQ Section Styles --- */
-.faq {
-    gap: 30px;
-    text-align: left;
-}
-.faq-item {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 15px;
-}
-.faq-item h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-.faq-item p {
-    color: #52525b;
-    max-width: 100%;
-}
-
-/* --- Footer --- */
-.page-footer {
+/* --- Etsy & Page Footer --- */
+.etsy-offer {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 15px;
+}
+.etsy-offer h3 { font-size: 24px; font-weight: 700; }
+.etsy-offer a { color: #007bff; }
+.etsy-offer a:hover { text-decoration: underline; }
+
+.page-footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
     color: #71717a;
 }
-.page-footer a {
-    color: #71717a;
-    text-decoration: underline;
-}
-.page-footer a:hover {
-    color: #007bff;
-}
+.page-footer a { color: #71717a; text-decoration: underline; }
+.page-footer a:hover { color: #18181b; }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
@@ -224,13 +141,50 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     h2 { font-size: 28px; }
     .master-card { padding: 40px 20px; }
     .mobile-break { display: none; }
-
-    .steps-container {
-        flex-direction: column;
-        gap: 40px;
-    }
 }
-
 @media (max-width: 480px) {
     .mobile-break { display: block; }
+}
+
+/* --- NEW: Accordion FAQ Styles --- */
+.faq {
+    max-width: 100%; /* Allow it to take full width */
+    text-align: left; /* Align text to the left */
+}
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+}
+.faq-item:first-of-type {
+    border-top: 1px solid #e5e5e5;
+}
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+.faq-question .icon {
+    font-size: 24px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+    color: #52525b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+/* Styles for when the accordion item is open */
+.faq-item.open .faq-answer {
+    max-height: 300px; /* Adjust if your answers are very long */
+    padding-top: 15px;
+    transition: max-height 0.4s ease-in, padding-top 0.4s ease-in;
+}
+.faq-item.open .faq-question .icon {
+    transform: rotate(45deg);
 }
