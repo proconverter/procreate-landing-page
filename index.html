@@ -52,6 +52,7 @@
                     <p>We extract the original stamp image without any quality loss.</p>
                 </div>
                 <div class="feature-item">
+                    <!-- FIXED: Corrected the icon filename -->
                     <img src="icon-no-expiration.svg" alt="No Expiration Icon" class="feature-icon">
                     <h3>No Expiration</h3>
                     <p>Use your credits whenever you need them. No subscriptions, no hidden fees.</p>
@@ -81,7 +82,6 @@
 
             <hr class="section-divider">
 
-            <!-- NEW: Accordion FAQ HTML Structure -->
             <section class="faq">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-item">
@@ -94,6 +94,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
+                    <!-- FIXED: Added the missing iPad question -->
                     <div class="faq-question">
                         <span>How do I find my `.brushset` files on my iPad to upload them?</span>
                         <span class="icon">+</span>
@@ -126,24 +127,25 @@ Once you've done that, you can easily find and select the `.brushset` file from 
             </section>
         </div>
 
-        <footer class="etsy-offer">
-            <h3>Are you an Etsy user?</h3>
-            <p>We have a special place in our hearts for the Etsy community. We're offering a special discount to get you started.</p>
-            <a href="YOUR_ETSY_LISTING_LINK_HERE">View our Etsy-Exclusive Offer</a>
-        </footer>
-
+        <!-- FIXED: Combined both footers into one for correct alignment -->
         <footer class="page-footer">
-            <p>&copy; 2025 Artypacks. All rights reserved.</p>
-            <p>
-                <a href="mailto:support@artypacks.app">Support</a> | 
-                <a href="#">Feedback</a> | 
-                <a href="#">Terms & Privacy</a>
-            </p>
+            <div class="etsy-offer">
+                <h3>Are you an Etsy user?</h3>
+                <p>We have a special place in our hearts for the Etsy community. We're offering a special discount to get you started.</p>
+                <a href="YOUR_ETSY_LISTING_LINK_HERE">View our Etsy-Exclusive Offer</a>
+            </div>
+            <div class="main-footer-links">
+                <p>&copy; 2025 Artypacks. All rights reserved.</p>
+                <p>
+                    <a href="mailto:support@artypacks.app">Support</a> | 
+                    <a href="#">Feedback</a> | 
+                    <a href="#">Terms & Privacy</a>
+                </p>
+            </div>
         </footer>
 
     </div>
 
-    <!-- NEW: Link to the JavaScript file -->
     <script src="main.js"></script>
 </body>
 </html>
