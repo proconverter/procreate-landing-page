@@ -83,6 +83,7 @@
 
             <section class="faq">
                 <h2 class="section-title">Frequently Asked Questions</h2>
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Do I need to install any software?</span>
@@ -92,9 +93,10 @@
                         <p>Not at all! Our converter is a web-based tool that works directly in your browser on any device, including desktops, iPads, and iPhones. All you need is your license key and your `.brushset` files.</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How do I find my `.brushset` files on my iPad to upload them?</span>
+                        <span>How do I find my `.brushset` files on my iPad?</span>
                         <span class="icon">+</span>
                     </div>
                     <div class="faq-answer">
@@ -104,6 +106,7 @@
 Once you've done that, you can easily find and select the `.brushset` file from that folder when you use our converter tool.</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Are the converted PNG files transparent?</span>
@@ -113,6 +116,7 @@ Once you've done that, you can easily find and select the `.brushset` file from 
                         <p>To ensure maximum compatibility and processing speed, our tool currently extracts stamps with a solid white background. This guarantees a fast and reliable conversion every time.</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Is it safe? Do you keep my brushes?</span>
@@ -122,6 +126,7 @@ Once you've done that, you can easily find and select the `.brushset` file from 
                         <p>Your privacy is our top priority. We never store your `.brushset` files. They are processed on our secure servers and are automatically deleted within one hour of conversion.</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Have a question or feedback?</span>
@@ -129,13 +134,18 @@ Once you've done that, you can easily find and select the `.brushset` file from 
                     </div>
                     <div class="faq-answer">
                         <p>Can't find what you're looking for? Send us your question and we'll get back to you shortly.</p>
-                        <form action="https://formspree.io/f/mrbagwvb" method="POST" class="contact-form">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mrbagwvb" method="POST">
                             <input type="email" name="email" placeholder="Your email" required>
                             <textarea name="message" placeholder="Your question or message" required></textarea>
                             <button type="submit">Send Message</button>
                         </form>
+                        <!-- NEW: This div will hold the success message -->
+                        <div id="form-status" style="display: none; padding: 15px; background-color: #f0fdf4; color: #166534; border-radius: 8px; margin-top: 15px;">
+                            Thank you! Your message has been sent.
+                        </div>
                     </div>
                 </div>
+
             </section>
         </div>
 
@@ -148,7 +158,7 @@ Once you've done that, you can easily find and select the `.brushset` file from 
             <div class="main-footer-links">
                 <p>&copy; 2025 Artypacks. All rights reserved.</p>
                 <p>
-                    <a href="#">Feedback</a> | 
+                    <!-- UPDATED: Removed the "Feedback" link -->
                     <a href="#">Terms & Privacy</a>
                 </p>
             </div>
