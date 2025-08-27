@@ -135,7 +135,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .etsy-offer a:hover { text-decoration: underline; }
 
 .main-footer-links {
-    /* NEW: This centers the paragraph element itself */
+    /* This centers the paragraph element itself */
     text-align: center; 
 }
 .main-footer-links a { 
