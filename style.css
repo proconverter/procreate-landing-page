@@ -77,7 +77,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.app-link-wrapper:hover .hover-overlay { opacity: 1; }
+.app-link-wrapper:hover .overlay { opacity: 1; }
 
 /* --- CTA Button --- */
 .cta-button {
