@@ -122,7 +122,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     display: flex;
     flex-direction: column;
     gap: 40px; /* Increased gap for more space */
-    align-items: center; /* THIS IS THE FIX */
 }
 .etsy-offer {
     display: flex;
@@ -135,10 +134,15 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 .etsy-offer a { color: #007bff; }
 .etsy-offer a:hover { text-decoration: underline; }
 
+/* START: UPDATED SECTION */
 .main-footer-links {
-    /* This centers the paragraph element itself */
     text-align: center; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+/* END: UPDATED SECTION */
+
 .main-footer-links a { 
     color: #71717a; 
     text-decoration: underline; 
