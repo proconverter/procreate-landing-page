@@ -46,78 +46,90 @@
                 </a>
             </section>
 
-            <!-- === FINAL PRICING & FEATURES SECTION === -->
-            <section class="pricing">
-                <h2 class="section-title">Choose Your Package</h2>
-                <div class="pricing-grid">
-                    <!-- Plan 1: Starter -->
-                    <div class="pricing-plan">
-                        <h3>Starter Pack</h3>
-                        <p class="price-tag">5 Credits</p>
-                        <p class="plan-description">For trying things out or small projects.</p>
-                    </div>
-                    <!-- Plan 2: Premium (Best Value ) -->
-                    <div class="pricing-plan recommended">
-                        <div class="badge">Best Value</div>
-                        <h3>Premium Pack</h3>
-                        <p class="price-tag">10 Credits</p>
-                        <p class="plan-description">Perfect for most artists and creators.</p>
-                    </div>
-                    <!-- Plan 3: Studio -->
-                    <div class="pricing-plan">
-                        <h3>Studio Pack</h3>
-                        <p class="price-tag">30 Credits</p>
-                        <p class="plan-description">For power users and professionals.</p>
-                    </div>
-                </div>
-            </section>
+            <hr class="section-divider">
 
-            <section class="core-features">
-                <h3 class="core-features-title">All Packages Include These Core Features:</h3>
-                <div class="core-features-grid">
+            <!-- === "HOW IT WORKS" SECTION (NEW LOCATION ) === -->
+            <section class="how-it-works">
+                <h2 class="section-title">From Brushset to PNG in 3 Simple Steps</h2>
+                <div class="how-it-works-grid">
                     <div class="feature-item">
-                        <img src="icon-credits.svg" alt="Conversion Credits Icon" class="feature-icon">
-                        <h3>Flexible Credits</h3>
-                        <p>One credit lets you convert up to 3 .brushsets (50MB in total).</p>
+                        <img src="icon-upload.svg" alt="Upload Icon" class="feature-icon">
+                        <h3>1. Upload Files</h3>
+                        <p>Enter your license key and select one or more `.brushset` files from your device.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon-batch.svg" alt="Batch Processing Icon" class="feature-icon">
-                        <h3>Batch Processing</h3>
-                        <p>Save time by converting multiple brushsets all in one go.</p>
+                        <img src="icon-convert.svg" alt="Convert Icon" class="feature-icon">
+                        <h3>2. Convert Securely</h3>
+                        <p>Our tool securely processes your files, extracting each stamp image.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon-lossless.svg" alt="Lossless PNGs Icon" class="feature-icon">
-                        <h3>Lossless PNGs</h3>
-                        <p>We extract the original stamp image without any quality loss.</p>
-                    </div>
-                    <div class="feature-item">
-                        <img src="icon-no-expiration.svg" alt="No Expiration Icon" class="feature-icon">
-                        <h3>No Expiration</h3>
-                        <p>Use your credits whenever you need them. No subscriptions, no hidden fees.</p>
+                        <img src="icon-download.svg" alt="Download Icon" class="feature-icon">
+                        <h3>3. Download PNGs</h3>
+                        <p>Get a neatly packaged `.zip` file containing all your stamps as PNGs.</p>
                     </div>
                 </div>
-                <a href="https://www.presentncherish.etsy.com" target="_blank" class="cta-button pricing-button">Get Instant Access Now</a>
             </section>
 
             <hr class="section-divider">
 
-            <section class="how-it-works">
-                <h2 class="section-title">From Brushset to PNG in 3 Simple Steps</h2>
-                <div class="feature-item">
-                    <img src="icon-upload.svg" alt="Upload Icon" class="feature-icon">
-                    <h3>1. Upload Files</h3>
-                    <p>Enter your license key and select one or more `.brushset` files from your device.</p>
+            <!-- === NEW ACCORDION PRICING SECTION === -->
+            <section class="pricing-accordion">
+                <h2 class="section-title">Choose Your Package</h2>
+                
+                <!-- Package 1: Starter -->
+                <div class="accordion-item">
+                    <div class="accordion-question">
+                        <span><strong>Starter Pack</strong> - 5 Credits</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-answer">
+                        <p class="package-description">For trying things out or for small, one-off projects. Get your feet wet and see how much time you can save.</p>
+                        <div class="icon-feature-list">
+                            <div class="icon-feature-item"><img src="icon-credits.svg" alt="Credits Icon"><span><strong>Flexible Credits:</strong> Convert up to 3 .brushsets per credit.</span></div>
+                            <div class="icon-feature-item"><img src="icon-batch.svg" alt="Batch Icon"><span><strong>Batch Processing:</strong> Convert multiple files in one session.</span></div>
+                            <div class="icon-feature-item"><img src="icon-lossless.svg" alt="Lossless Icon"><span><strong>Lossless PNGs:</strong> Extract stamps at their original resolution.</span></div>
+                            <div class="icon-feature-item"><img src="icon-no-expiration.svg" alt="Expiration Icon"><span><strong>No Expiration:</strong> Your credits never expire.</span></div>
+                        </div>
+                        <a href="https://www.presentncherish.etsy.com" target="_blank" class="cta-button accordion-cta">Get the Starter Pack on Etsy</a>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <img src="icon-convert.svg" alt="Convert Icon" class="feature-icon">
-                    <h3>2. Convert Securely</h3>
-                    <p>Our tool securely processes your files, extracting each stamp image.</p>
+
+                <!-- Package 2: Premium (Open by default ) -->
+                <div class="accordion-item open">
+                    <div class="accordion-question">
+                        <span><strong>Premium Pack</strong> - 10 Credits <span class="badge">Best Value</span></span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-answer">
+                        <p class="package-description">Perfect for most artists and creators who have a growing library of brushes. This package offers the best balance of value and capacity.</p>
+                        <div class="icon-feature-list">
+                            <div class="icon-feature-item"><img src="icon-credits.svg" alt="Credits Icon"><span><strong>Flexible Credits:</strong> Convert up to 3 .brushsets per credit.</span></div>
+                            <div class="icon-feature-item"><img src="icon-batch.svg" alt="Batch Icon"><span><strong>Batch Processing:</strong> Convert multiple files in one session.</span></div>
+                            <div class="icon-feature-item"><img src="icon-lossless.svg" alt="Lossless Icon"><span><strong>Lossless PNGs:</strong> Extract stamps at their original resolution.</span></div>
+                            <div class="icon-feature-item"><img src="icon-no-expiration.svg" alt="Expiration Icon"><span><strong>No Expiration:</strong> Your credits never expire.</span></div>
+                        </div>
+                        <a href="https://www.presentncherish.etsy.com" target="_blank" class="cta-button accordion-cta">Get the Premium Pack on Etsy</a>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <img src="icon-download.svg" alt="Download Icon" class="feature-icon">
-                    <h3>3. Download PNGs</h3>
-                    <p>Get a neatly packaged `.zip` file containing all your stamps as PNGs.</p>
+
+                <!-- Package 3: Studio -->
+                <div class="accordion-item">
+                    <div class="accordion-question">
+                        <span><strong>Studio Pack</strong> - 30 Credits</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-answer">
+                        <p class="package-description">The ultimate package for power users, professional designers, and fellow Etsy sellers who need to process large volumes of assets.</p>
+                        <div class="icon-feature-list">
+                            <div class="icon-feature-item"><img src="icon-credits.svg" alt="Credits Icon"><span><strong>Flexible Credits:</strong> Convert up to 3 .brushsets per credit.</span></div>
+                            <div class="icon-feature-item"><img src="icon-batch.svg" alt="Batch Icon"><span><strong>Batch Processing:</strong> Convert multiple files in one session.</span></div>
+                            <div class="icon-feature-item"><img src="icon-lossless.svg" alt="Lossless Icon"><span><strong>Lossless PNGs:</strong> Extract stamps at their original resolution.</span></div>
+                            <div class="icon-feature-item"><img src="icon-no-expiration.svg" alt="Expiration Icon"><span><strong>No Expiration:</strong> Your credits never expire.</span></div>
+                        </div>
+                        <a href="https://www.presentncherish.etsy.com" target="_blank" class="cta-button accordion-cta">Get the Studio Pack on Etsy</a>
+                    </div>
                 </div>
+
             </section>
 
             <hr class="section-divider">
@@ -125,22 +137,22 @@
             <section class="faq">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 
-                <div class="faq-item">
-                    <div class="faq-question">
+                <div class="accordion-item">
+                    <div class="accordion-question">
                         <span>Do I need to install any software?</span>
                         <span class="icon">+</span>
                     </div>
-                    <div class="faq-answer">
+                    <div class="accordion-answer">
                         <p>Not at all! Our converter is a web-based tool that works directly in your browser on any device, including desktops, iPads, and iPhones. All you need is your license key and your `.brushset` files.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
+                <div class="accordion-item">
+                    <div class="accordion-question">
                         <span>How do I find my `.brushset` files on my iPad?</span>
                         <span class="icon">+</span>
                     </div>
-                    <div class="faq-answer">
+                    <div class="accordion-answer">
                         <p>That's a great question! On an iPad, you first need to export your brushes from Procreate to the Files app. It's a quick two-step process:  
 1. In Procreate: Open the Brush Library, swipe left on the brush set you want to convert, and tap "Share".  
 2. Save to Files: In the share menu that pops up, choose "Save to Files". We recommend creating a new folder named "Brush Exports" to keep things organized.  
@@ -148,32 +160,32 @@ Once you've done that, you can easily find and select the `.brushset` file from 
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
+                <div class="accordion-item">
+                    <div class="accordion-question">
                         <span>Are the converted PNG files transparent?</span>
                         <span class="icon">+</span>
                     </div>
-                    <div class="faq-answer">
+                    <div class="accordion-answer">
                         <p>To ensure maximum compatibility and processing speed, our tool currently extracts stamps with a solid white background. This guarantees a fast and reliable conversion every time.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
+                <div class="accordion-item">
+                    <div class="accordion-question">
                         <span>Is it safe? Do you keep my brushes?</span>
                         <span class="icon">+</span>
                     </div>
-                    <div class="faq-answer">
+                    <div class="accordion-answer">
                         <p>Your privacy is our top priority. We never store your `.brushset` files. They are processed on our secure servers and are automatically deleted within one hour of conversion.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
+                <div class="accordion-item">
+                    <div class="accordion-question">
                         <span>We'd love to hear from you!</span>
                         <span class="icon">+</span>
                     </div>
-                    <div class="faq-answer">
+                    <div class="accordion-answer">
                         <p>Whether you have a question, a feature suggestion, or just want to say hello, we're always happy to connect. Drop us a message below and we'll get back to you shortly.</p>
                         <form id="contact-form" class="contact-form" action="https://formspree.io/f/mrbagwvb" method="POST">
                             <input type="email" name="email" placeholder="Your email" required>
