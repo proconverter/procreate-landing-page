@@ -45,7 +45,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .app-proof, .pricing, .core-features, .how-it-works, .faq {
+.hero, .app-proof, .how-it-works, .pricing-accordion, .faq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,23 +54,16 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     width: 100%;
 }
 
-/* --- Spacing Adjustment --- */
-.pricing {
-    margin-top: -10px; /* Brings section closer to image above */
-}
-
 .tagline { font-size: 20px; color: #52525b; }
 
 /* --- App Proof / Screenshot --- */
 .app-proof { position: relative; }
-
 .app-link-wrapper { 
     display: block; 
     text-decoration: none; 
     border-radius: 16px;
     overflow: hidden;
 }
-
 .app-proof img { 
     width: 100%; 
     max-width: 600px; 
@@ -78,273 +71,151 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     display: block; 
     transition: transform 0.4s ease;
 }
-
 .hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    transition: background-color 0.3s ease;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; color: #fff;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 16px; transition: background-color 0.3s ease;
 }
-
 .hover-overlay span {
-    font-size: 18px;
-    font-weight: 700;
-    padding: 12px 24px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    opacity: 0;
-    transform: translateY(10px);
+    font-size: 18px; font-weight: 700; padding: 12px 24px;
+    background-color: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    opacity: 0; transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* --- Desktop Hover Behavior --- */
 @media (hover: hover) and (min-width: 769px) {
-    .app-link-wrapper:hover img {
-        transform: scale(1.05);
-    }
-    
-    .app-link-wrapper:hover .hover-overlay span {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .app-link-wrapper:hover img { transform: scale(1.05); }
+    .app-link-wrapper:hover .hover-overlay span { opacity: 1; transform: translateY(0); }
 }
-
-/* --- Mobile (Touch) Behavior --- */
 @media (hover: none), (max-width: 768px) {
-    .hover-overlay {
-        /* No background-color, so no dimming */
-    }
-    .hover-overlay span {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .hover-overlay span { opacity: 1; transform: translateY(0); }
 }
 
 /* --- General CTA Button --- */
 .cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
+    display: inline-block; background-color: #007bff; color: #ffffff;
+    padding: 16px 32px; border-radius: 12px; font-size: 18px; font-weight: 700;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
-.cta-button:hover { 
-    transform: scale(1.05); 
-    background-color: #0056b3;
-}
+.cta-button:hover { transform: scale(1.05); background-color: #0056b3; }
 
 .section-divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 20px 0;
+    width: 100%; border: none; border-top: 1px solid #e5e5e5; margin: 10px 0;
 }
 
-/* === PRICING SECTION STYLES === */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first: 1 column */
-    gap: 20px;
-    width: 100%;
-    margin-top: 20px;
+/* --- How-It-Works Section --- */
+.how-it-works-grid {
+    display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%;
 }
-
-.pricing-plan {
-    border: 1px solid #e5e5e5;
-    border-radius: 16px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pricing-plan:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.pricing-plan.recommended {
-    border: 2px solid #007bff;
-}
-
-.pricing-plan .badge {
-    position: absolute;
-    top: -15px;
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.pricing-plan .price-tag {
-    font-size: 24px;
-    font-weight: 700;
-    color: #18181b;
-    margin: 5px 0;
-}
-
-.pricing-plan .plan-description {
-    font-size: 14px;
-    color: #52525b;
-    min-height: 40px;
-}
-
-.pricing-button {
-    margin-top: 30px; /* Increased margin for better separation */
-}
-
-/* === CORE FEATURES SECTION STYLES === */
-.core-features {
-    background-color: #f9fafb;
-    padding: 40px 20px;
-    border-radius: 16px;
-    margin-top: 0; /* Removed margin to follow pricing section directly */
-    gap: 30px; /* Increased gap for content */
-}
-.core-features-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #18181b;
-}
-.core-features-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first */
-    gap: 30px;
-    width: 100%;
-}
-
-/* --- Features & How-It-Works Sections --- */
 .feature-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 12px; width: 100%;
 }
 .feature-icon { width: 48px; height: 48px; }
 .feature-item h3 { margin-top: 8px; }
 .feature-item p { font-size: 16px; color: #52525b; max-width: 100%; }
 
-/* --- Page Footer --- */
-.page-footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #71717a;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+/* --- Accordion Styles (for Pricing & FAQ) --- */
+.pricing-accordion, .faq {
+    max-width: 100%; text-align: left;
+}
+.accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+.accordion-item:first-of-type {
+    border-top: 1px solid #e5e5e5;
+}
+.accordion-question {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-size: 18px; font-weight: 500; padding: 20px 0;
+}
+.accordion-question .icon {
+    font-size: 24px; font-weight: 300; transition: transform 0.3s ease;
+}
+.accordion-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+    color: #52525b; font-size: 16px; line-height: 1.6;
+}
+.accordion-item.open .accordion-answer {
+    max-height: 600px; /* Increased for more content */
+    padding-bottom: 25px;
+    transition: max-height 0.4s ease-in, padding-bottom 0.4s ease-in;
+}
+.accordion-item.open .accordion-question .icon {
+    transform: rotate(45deg);
 }
 
-/* === STAMP SHOWCASE STYLES === */
+/* --- Specific Styles for Pricing Accordion --- */
+.pricing-accordion .accordion-question span {
+    display: flex; align-items: center; gap: 10px;
+}
+.pricing-accordion .badge {
+    background-color: #007bff; color: #fff; padding: 4px 12px;
+    border-radius: 20px; font-size: 12px; font-weight: 700;
+}
+.pricing-accordion .package-description {
+    max-width: 100%; margin-bottom: 25px;
+}
+.icon-feature-list {
+    display: grid; gap: 15px; margin-bottom: 25px;
+}
+.icon-feature-item {
+    display: flex; align-items: center; gap: 15px; text-align: left;
+}
+.icon-feature-item img {
+    width: 24px; height: 24px; flex-shrink: 0;
+}
+.accordion-cta {
+    width: 100%; text-align: center;
+}
+
+/* --- Page Footer --- */
+.page-footer {
+    padding: 20px; text-align: center; font-size: 14px;
+    color: #71717a; display: flex; flex-direction: column; gap: 40px;
+}
 .stamp-showcase {
-    background-color: #ffffff;
-    border-radius: 24px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    background-color: #ffffff; border-radius: 24px; padding: 40px;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
 }
-.stamp-showcase h3 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #18181b;
-}
-.stamp-showcase p {
-    color: #52525b;
-    font-size: 18px;
-}
+.stamp-showcase h3 { font-size: 28px; font-weight: 800; color: #18181b; }
+.stamp-showcase p { color: #52525b; font-size: 18px; }
 .stamp-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first */
-    gap: 20px;
-    width: 100%;
-    margin: 20px 0;
+    display: grid; grid-template-columns: 1fr; gap: 20px;
+    width: 100%; margin: 20px 0;
 }
 .stamp-card {
-    display: block;
-    text-decoration: none;
-    color: #18181b;
-    border-radius: 16px;
-    overflow: hidden;
+    display: block; text-decoration: none; color: #18181b;
+    border-radius: 16px; overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e5e5e5;
 }
 .stamp-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.07);
 }
 .stamp-card img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    background-color: #f4f4f5;
+    width: 100%; display: block; aspect-ratio: 1 / 1;
+    object-fit: cover; background-color: #f4f4f5;
 }
 .stamp-card h4 {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 15px;
-    background-color: #ffffff;
+    font-size: 16px; font-weight: 700; padding: 15px; background-color: #ffffff;
 }
-
 .main-footer-links a { 
-    color: #71717a;
-    font-weight: 400;
-    text-decoration: underline; 
+    color: #71717a; font-weight: 400; text-decoration: underline; 
     transition: color 0.2s ease;
 }
-.main-footer-links a:hover { 
-    color: #18181b;
-}
+.main-footer-links a:hover { color: #18181b; }
 .main-footer-links {
-    text-align: center; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    text-align: center; width: 100%; display: flex; justify-content: center;
 }
 
 /* --- Responsive Design --- */
 @media (min-width: 768px) {
-    /* Tablet and up: 3 columns for pricing */
-    .pricing-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .stamp-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    /* 4 columns for core features on desktop */
-    .core-features-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .how-it-works-grid { grid-template-columns: repeat(3, 1fr); }
+    .stamp-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
-@media (max-width: 767px) {
-    /* On smaller tablets, 2 columns looks better than 4 */
-    .core-features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
@@ -352,104 +223,27 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     .stamp-showcase { padding: 30px 20px; }
 }
 
-/* --- Accordion FAQ Styles --- */
-.faq {
-    max-width: 100%;
-    text-align: left;
-}
-.faq-item {
-    border-bottom: 1px solid #e5e5e5;
-    padding: 20px 0;
-}
-.faq-item:first-of-type {
-    border-top: 1px solid #e5e5e5;
-}
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
-}
-.faq-question .icon {
-    font-size: 24px;
-    font-weight: 300;
-    transition: transform 0.3s ease;
-}
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
-    color: #52525b;
-    font-size: 16px;
-    line-height: 1.6;
-}
-.faq-item.open .faq-answer {
-    max-height: 500px;
-    padding-top: 15px;
-    transition: max-height 0.4s ease-in, padding-top 0.4s ease-in;
-}
-.faq-item.open .faq-question .icon {
-    transform: rotate(45deg);
-}
-
 /* --- Contact Form Styles --- */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+    display: flex; flex-direction: column; gap: 15px; margin-top: 10px;
 }
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    border: 1px solid #d4d4d8;
-    border-radius: 8px;
-    background-color: #f4f4f5;
+.contact-form input, .contact-form textarea {
+    width: 100%; padding: 12px; font-family: 'Inter', sans-serif; font-size: 16px;
+    border: 1px solid #d4d4d8; border-radius: 8px; background-color: #f4f4f5;
 }
-.contact-form textarea {
-    min-height: 120px;
-    resize: vertical;
-}
+.contact-form textarea { min-height: 120px; resize: vertical; }
 .contact-form button {
-    align-self: flex-start;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    background-color: #18181b;
-    color: #ffffff;
-    transition: background-color 0.2s ease;
+    align-self: flex-start; padding: 12px 24px; font-size: 16px; font-weight: 700;
+    border-radius: 8px; border: none; cursor: pointer;
+    background-color: #18181b; color: #ffffff; transition: background-color 0.2s ease;
 }
-.contact-form button:hover {
-    background-color: #3f3f46;
-}
-
-/* --- Form Status & Reset Button Styles --- */
+.contact-form button:hover { background-color: #3f3f46; }
 #form-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #f0fdf4;
-    color: #166534;
-    border-radius: 8px;
-    margin-top: 15px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px; background-color: #f0fdf4; color: #166534;
+    border-radius: 8px; margin-top: 15px;
 }
-
 #reset-form-button {
-    color: #15803d;
-    font-weight: 700;
-    text-decoration: underline;
-    cursor: pointer;
+    color: #15803d; font-weight: 700; text-decoration: underline; cursor: pointer;
 }
-
-#reset-form-button:hover {
-    color: #18181b;
-}
+#reset-form-button:hover { color: #18181b; }
