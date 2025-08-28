@@ -45,7 +45,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
 }
 
 /* --- Content Sections --- */
-.hero, .app-proof, .cta, .pricing, .core-features, .how-it-works, .faq {
+.hero, .app-proof, .pricing, .core-features, .how-it-works, .faq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +125,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     }
 }
 
-/* --- CTA Button --- */
+/* --- General CTA Button --- */
 .cta-button {
     display: inline-block;
     background-color: #007bff;
@@ -148,7 +148,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     margin: 20px 0;
 }
 
-/* === NEW PRICING SECTION STYLES === */
+/* === PRICING SECTION STYLES === */
 .pricing-grid {
     display: grid;
     grid-template-columns: 1fr; /* Mobile-first: 1 column */
@@ -202,21 +202,16 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     min-height: 40px;
 }
 
-.pricing-plan .price-amount {
-    font-size: 36px;
-    font-weight: 800;
-    margin-top: 10px;
-}
-
 .pricing-button {
     margin-top: 20px;
 }
 
-/* === NEW CORE FEATURES SECTION STYLES === */
+/* === CORE FEATURES SECTION STYLES === */
 .core-features {
     background-color: #f9fafb;
     padding: 40px 20px;
     border-radius: 16px;
+    margin-top: 20px; /* Added margin for spacing */
 }
 .core-features-title {
     font-size: 24px;
@@ -229,6 +224,11 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     gap: 30px;
     width: 100%;
 }
+/* This targets the paragraph inside the feature items ONLY in the core-features section */
+.core-features .feature-item p {
+    min-height: 60px; /* Alignment fix for descriptions of different lengths */
+}
+
 
 /* --- Features & How-It-Works Sections --- */
 .feature-item {
@@ -239,7 +239,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     width: 100%;
     max-width: 450px;
 }
-.feature-item + .feature-item { margin-top: 20px; }
+/* Removed the margin-top rule to use grid gap instead */
 .feature-icon { width: 48px; height: 48px; }
 .feature-item h3 { margin-top: 8px; }
 .feature-item p { font-size: 16px; color: #52525b; max-width: 100%; }
@@ -255,7 +255,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     gap: 40px;
 }
 
-/* === NEW STAMP SHOWCASE STYLES === */
+/* === STAMP SHOWCASE STYLES === */
 .stamp-showcase {
     background-color: #ffffff;
     border-radius: 24px;
@@ -288,6 +288,7 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e5e5e5;
 }
 .stamp-card:hover {
     transform: translateY(-5px);
@@ -305,7 +306,6 @@ a { color: #007bff; text-decoration: none; font-weight: 700; }
     font-weight: 700;
     padding: 15px;
     background-color: #ffffff;
-    border-top: 1px solid #e5e5e5;
 }
 
 .main-footer-links a { 
