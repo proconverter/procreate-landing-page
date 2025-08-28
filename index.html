@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro2PNG - The Easiest Way to Convert Procreate Stamps to PNG</title>
+    <meta name="description" content="Stop screenshotting. Start creating. Our tool turns .brushset files into ready-to-use PNGs in seconds, ready for Canva, Photoshop, or your favorite design software.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- Master Card 1: Hero & How It Works -->
+        <div class="master-card">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Your Digital Vision, Perfectly Realized.</h1>
+                <p class="tagline">From concept to launch, we turn .brushset files into ready-to-use PNGs in seconds, ready for Canva, Photoshop, or your favorite design software.</p>
+                <div class="app-demo">
+                    <img src="app-screenshot.png" alt="Pro2PNG App Interface" class="demo-image">
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works">
+                <div class="inner-card">
+                    <h2>From Brushset to PNG in 3 Simple Steps</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-icon">📁</div>
+                            <h3>1. Upload Files</h3>
+                            <p>Select one or more <code>.brushset</code> files from your device.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">⚡</div>
+                            <h3>2. Convert Securely</h3>
+                            <p>Our tool securely processes your files, extracting each stamp.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">📥</div>
+                            <h3>3. Download PNGs</h3>
+                            <p>Get a <code>.zip</code> file containing all your stamps as PNGs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Master Card 2: Live Demo -->
+        <div class="master-card">
+            <section class="live-demo">
+                <h2>See it in Action</h2>
+                <p class="demo-subtitle">Experience the magic yourself with our sample brushset file.</p>
+                
+                <div class="demo-container inner-card">
+                    <div class="sample-download">
+                        <p>First, download our sample file:</p>
+                        <a href="demo-assets/Sample.brushset" download="Sample.brushset" class="download-btn">
+                            Download Sample.brushset
+                        </a>
+                    </div>
+                    <div class="drop-zone" id="dropZone">
+                        <div class="drop-content">
+                            <h3>Drag the sample file here!</h3>
+                            <p>Or click to select the file</p>
+                            <input type="file" id="fileInput" accept=".brushset" style="display: none;">
+                        </div>
+                    </div>
+                    <!-- JS-controlled elements remain for functionality -->
+                    <div class="loading-container" id="loadingContainer" style="display: none;">...</div>
+                    <div class="demo-results" id="demoResults" style="display: none;">...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Master Card 3: Packages & FAQ -->
+        <div class="master-card">
+            <!-- Packages Section -->
+            <section class="packages" id="packages">
+                <h2>Choose Your Package</h2>
+                <div class="package-accordions">
+                    <!-- Accordion items remain the same -->
+                    <div class="package-accordion active">
+                        <div class="package-header" data-package="premium">
+                            <h3>Premium Pack</h3>
+                            <span class="package-credits">10 Credits</span>
+                            <span class="accordion-arrow">▼</span>
+                        </div>
+                        <div class="package-content">
+                            <p>Perfect for most artists and creators.</p>
+                            <a href="https://presentncherish.etsy.com" class="cta-button">Get Premium Pack</a>
+                        </div>
+                    </div>
+                     <!-- Add other packages here -->
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list inner-card">
+                    <!-- FAQ items remain the same -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What file formats do you support?</h3>
+                            <span class="faq-arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We currently support .brushset files...</p>
+                        </div>
+                    </div>
+                     <!-- Add other FAQ items here -->
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
