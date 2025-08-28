@@ -1,0 +1,211 @@
+/* ---
+   New Stylesheet for Pro2PNG
+   Vision: Cool grey gradient, layered cards, modern & clean.
+   --- */
+
+/* --- 1. Global Styles & Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700;900&display=swap' );
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Satoshi', 'Inter', sans-serif; /* Using Satoshi as the primary font */
+    background: linear-gradient(170deg, #f0f2f5 0%, #e6e9ee 100%); /* Cool grey gradient */
+    color: #1a1a1a; /* Dark text for contrast */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 40px 20px; /* Give some space on mobile */
+}
+
+/* --- 2. Main Layout Containers --- */
+.page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between the main white cards */
+}
+
+.master-card {
+    background-color: #ffffff;
+    border-radius: 24px; /* Rounded corners for the main card */
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Space between elements inside the card */
+}
+
+.inner-card {
+    background-color: #f8f9fa; /* Light grey for smaller boxes */
+    border: 1px solid #e9ecef; /* Subtle border */
+    border-radius: 16px; /* Softer rounded corners */
+    padding: 25px;
+}
+
+/* --- 3. Typography --- */
+h1, h2, h3, h4, p {
+    text-align: center; /* Center-align text by default */
+}
+
+h1 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem; /* 16px */
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto; /* Center paragraphs */
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- 4. Section Specific Styling --- */
+
+/* Hero Section */
+.hero {
+    align-items: center;
+    text-align: center;
+}
+
+.app-demo {
+    margin-top: 20px;
+}
+
+.demo-image {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+/* How It Works Section */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-icon {
+    font-size: 2rem;
+}
+
+/* Live Demo Section */
+.demo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drop-zone {
+    border: 2px dashed #ced4da;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.drop-zone:hover {
+    background-color: #e9ecef;
+}
+
+/* Packages Section */
+.package-accordions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.package-accordion {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.package-header {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.package-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.package-accordion.active .package-content {
+    max-height: 500px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* --- 5. Buttons & Links --- */
+.cta-button, .download-btn, .submit-btn {
+    display: inline-block;
+    background-color: #1a1a1a; /* Black button */
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover, .download-btn:hover, .submit-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    .master-card {
+        padding: 25px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr; /* Stack steps on mobile */
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+}
