@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- ==> FAVICON LINKS <== -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- ==> FAVICON LINKS (with Cache Busting) <== -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+<link rel="manifest" href="site.webmanifest?v=2">
+<link rel="shortcut icon" href="favicon.ico?v=2">
     <!-- Google tag (gtag.js ) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EZB1B931D"></script>
     <script>
@@ -64,34 +66,7 @@
             </section>
         </div>
 
-        <!-- Master Card 2: Live Demo -->
-        <div class="master-card">
-            <section class="live-demo">
-                <h2>See it in Action</h2>
-                <p class="demo-subtitle">Experience the magic yourself with our sample brushset file.</p>
-                
-                <div class="demo-container inner-card">
-                    <div class="sample-download">
-                        <p>First, download our sample file:</p>
-                        <a href="demo-assets/Sample.brushset" download="Sample.brushset" class="download-btn">
-                            Download Sample.brushset
-                        </a>
-                    </div>
-                    <div class="drop-zone" id="dropZone">
-                        <div class="drop-content">
-                            <h3>Drag the sample file here!</h3>
-                            <p>Or click to select the file</p>
-                            <input type="file" id="fileInput" accept=".brushset" style="display: none;">
-                        </div>
-                    </div>
-                    <!-- JS-controlled elements remain for functionality -->
-                    <div class="loading-container" id="loadingContainer" style="display: none;">...</div>
-                    <div class="demo-results" id="demoResults" style="display: none;">...</div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Master Card 3: Packages & FAQ -->
+        <!-- Master Card 2: Packages & FAQ -->
         <div class="master-card">
             <!-- Packages Section -->
             <section class="packages" id="packages">
