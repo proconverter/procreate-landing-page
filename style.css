@@ -7,17 +7,17 @@
 
 :root {
     --font-family: 'Plus Jakarta Sans', sans-serif;
-    --background-color: #E9E9E3;
-    --text-box-bg: #F6F6F6;
+    --background-color: #E9E9E3; /* Main page background */
+    --master-card-bg: #FFFFFF;   /* The main white container */
+    --sub-card-bg: #F6F6F6;      /* Light grey for nested cards */
     --text-color: #555555;
     --heading-color: #1a1a1a;
-    --frame-color: #FFFFFF;
     --button-bg: #1a1a1a;
     --button-text: #FFFFFF;
     --button-secondary-bg: #FFFFFF;
     --button-secondary-text: #1a1a1a;
-    --border-radius: 20px;
-    --container-padding: 40px;
+    --border-radius-large: 24px; /* For master card */
+    --border-radius-small: 16px; /* For sub-cards */
 }
 
 body {
@@ -25,99 +25,102 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    font-size: 14px; /* Base font size */
+    font-size: 14px;
+    padding: 40px 20px; /* Add padding to center the master card */
+}
+
+.master-card {
+    max-width: 420px; /* Approx 1/3 of a standard desktop, good for mobile view */
+    margin: 0 auto;
+    background-color: var(--master-card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Thin, subtle frame */
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 12px; /* Padding to create the thin white frame effect */
+    overflow: hidden;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0;
 }
 
 section {
-    padding: 60px 0;
+    padding: 20px 15px; /* Spacing between sections inside the master card */
+}
+
+section:first-child {
+    padding-top: 25px;
+}
+
+section:last-child {
+    padding-bottom: 25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
     font-weight: 600;
-}
-
-/* Helper class for styled boxes */
-.styled-box {
-    background-color: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    padding: var(--container-padding);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    line-height: 1.3;
 }
 
 /* Hero Section */
-.hero .container {
-    background-color: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    padding: var(--container-padding);
+.hero {
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Adjusted for harmony */
     font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 .tagline {
-    font-size: 1.05rem;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.app-demo {
-    margin-top: 40px;
+    font-size: 1rem; /* Adjusted for harmony */
+    margin-bottom: 25px;
+    max-width: 100%;
 }
 
 .demo-image {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: var(--border-radius-small);
     border: 1px solid #e0e0e0;
 }
 
-/* How It Works Section */
-.how-it-works h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
+/* Sub-card styling for sections */
+.how-it-works, .live-demo, .packages, .stamp-packs, .faq, .contact {
+    background-color: var(--sub-card-bg);
+    border-radius: var(--border-radius-small);
+    margin: 15px 0;
+    padding: 25px;
 }
 
+.how-it-works h2, .live-demo h2, .packages h2, .stamp-packs h2, .faq h2, .contact h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+/* How It Works Section */
 .steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr; /* Stacked on mobile-like view */
+    gap: 20px;
 }
 
 .step {
     text-align: center;
-    padding: 30px;
-    background: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 0;
 }
 
 .step-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 .step h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
 }
 
 .step p {
@@ -125,144 +128,53 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Live Demo Section */
-.live-demo .container {
-    text-align: center;
-}
-
-.live-demo h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
 .demo-subtitle {
-    font-size: 1rem;
-    margin-bottom: 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: -15px;
+    margin-bottom: 25px;
 }
 
 .demo-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    padding: var(--container-padding);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.sample-download {
-    margin-bottom: 30px;
-}
-
-.sample-download p {
-    margin-bottom: 15px;
-    font-size: 1rem;
+    padding: 0;
 }
 
 .download-btn {
-    display: inline-block;
-    background: var(--button-secondary-bg);
-    color: var(--button-secondary-text);
-    padding: 12px 25px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid #e0e0e0;
-}
-
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
 }
 
 .drop-zone {
     background: #E9E9E3;
     border: 2px dashed #cccccc;
-    border-radius: 15px;
-    padding: 50px 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 30px;
-}
-
-.drop-zone:hover, .drop-zone.dragover {
-    border-color: var(--heading-color);
-    background: #e0e0d8;
-}
-
-.drop-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-}
-
-.drop-content p {
-    font-size: 0.9rem;
-}
-
-.drop-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.loading-container, .demo-results {
-    padding: 30px;
-}
-
-.progress-bar {
-    height: 6px;
-    background: #e0e0e0;
-    border-radius: 3px;
-    margin-bottom: 15px;
-}
-
-.progress-fill {
-    background: var(--heading-color);
-}
-
-.loading-text {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.demo-results h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.result-images {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 15px;
+    border-radius: var(--border-radius-small);
+    padding: 40px 20px;
     margin: 25px 0;
 }
 
-.result-image {
-    background: white;
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.drop-content h3 {
+    font-size: 1.1rem;
 }
 
 /* General Button Styles */
 .cta-button, .package-cta, .submit-btn, .cta-button-secondary {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 12px;
-    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: 600;
+    text-decoration: none;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .cta-button, .package-cta, .submit-btn {
     background: var(--button-bg);
     color: var(--button-text);
-}
-
-.cta-button:hover, .package-cta:hover, .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button-secondary {
@@ -271,290 +183,137 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--button-bg);
 }
 
-.cta-button-secondary:hover {
-    background: var(--button-bg);
-    color: var(--button-text);
-    transform: translateY(-2px);
-}
-
 /* Packages Section */
-.packages h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
-}
-
 .package-accordions {
-    max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0;
 }
 
 .package-accordion {
-    background: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    background: var(--master-card-bg);
+    border-radius: var(--border-radius-small);
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: 1px solid #e0e0e0;
 }
 
 .package-header {
-    padding: 20px 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+    padding: 15px 20px;
 }
 
 .package-header h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .package-credits {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.best-value {
-    background: var(--button-bg);
-    color: var(--button-text);
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-
-.accordion-arrow {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.package-accordion.active .accordion-arrow {
-    transform: rotate(180deg);
+    font-size: 1rem;
 }
 
 .package-content {
-    padding: 0 25px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    padding: 0 20px;
 }
 
 .package-accordion.active .package-content {
-    padding: 0 25px 25px;
-    max-height: 500px;
+    padding: 0 20px 20px;
 }
 
 .package-description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.package-features {
-    list-style: none;
-    margin-bottom: 25px;
-}
-
-.package-features li {
-    margin-bottom: 12px;
-    font-size: 0.9rem;
-}
-
-.feature-icon {
-    margin-right: 10px;
-    font-size: 1.1rem;
-}
-
-.main-cta {
-    text-align: center;
-}
-
-/* Stamp Packs & FAQ & Contact Sections */
-.stamp-packs, .faq, .contact {
-    background-color: transparent;
-}
-
-.stamp-packs .container, .faq .container, .contact .container {
-    background-color: var(--text-box-bg);
-    border: 1px solid var(--frame-color);
-    border-radius: var(--border-radius);
-    padding: var(--container-padding);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.stamp-packs h2, .faq h2, .contact h2 {
-    text-align: center;
-    font-size: 2rem;
+    font-size: 0.95rem;
     margin-bottom: 15px;
 }
 
-.stamp-packs > .container > p, .contact > .container > p {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 40px;
+.package-features li {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.main-cta {
+    margin-top: 20px;
+}
+
+/* Stamp Packs Section */
+.stamp-packs > .container > p {
+    font-size: 0.95rem;
+    margin-top: -15px;
+    margin-bottom: 25px;
 }
 
 .stamp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .stamp-card {
     background: #E9E9E3;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
+    padding: 20px;
+    border-radius: var(--border-radius-small);
     border: 1px solid #ddd;
 }
 
-.stamp-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
-.stamp-image {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
 .stamp-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-}
-
-.stamp-card p {
-    font-size: 0.9rem;
-}
-
-.stamp-cta {
-    text-align: center;
+    font-size: 1rem;
 }
 
 /* FAQ Section */
 .faq-list {
-    max-width: 700px;
-    margin: 40px auto 0;
-}
-
-.faq-item {
-    background: #E9E9E3;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    margin-bottom: 12px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px 25px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-question h3 {
-    font-size: 1.1rem;
     margin: 0;
 }
 
-.faq-arrow {
-    font-size: 1.3rem;
-    color: var(--heading-color);
+.faq-item {
+    background: var(--master-card-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius-small);
 }
 
-.faq-item.open .faq-arrow {
-    transform: rotate(45deg);
+.faq-question {
+    padding: 15px 20px;
+}
+
+.faq-question h3 {
+    font-size: 1rem;
 }
 
 .faq-answer {
-    padding: 0 25px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    padding: 0 20px;
 }
 
 .faq-item.open .faq-answer {
-    padding: 0 25px 20px;
-    max-height: 200px;
-}
-
-.faq-answer p {
-    font-size: 0.9rem;
+    padding: 0 20px 15px;
 }
 
 /* Contact Section */
-#contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+.contact > .container > p {
+    font-size: 0.95rem;
+    margin-top: -15px;
+    margin-bottom: 25px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+#contact-form {
+    width: 100%;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 0.95rem;
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border-radius: 8px;
     background-color: #E9E9E3;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--heading-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        font-size: 13px;
-    }
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    .tagline {
-        font-size: 1rem;
-    }
-    .steps, .stamp-grid {
-        grid-template-columns: 1fr;
-    }
-    .package-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    .best-value {
-        align-self: flex-end;
-    }
-    :root {
-        --container-padding: 25px;
-    }
-}
-
+/* Responsive adjustments */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.8rem;
+    body {
+        padding: 20px 10px;
     }
-    .result-images {
-        grid-template-columns: repeat(2, 1fr);
+    .master-card {
+        padding: 8px;
     }
-    .cta-button, .package-cta, .submit-btn, .cta-button-secondary {
-        width: 100%;
-        text-align: center;
+    section {
+        padding: 15px 12px;
+    }
+    .how-it-works, .live-demo, .packages, .stamp-packs, .faq, .contact {
+        padding: 20px;
     }
 }
