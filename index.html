@@ -1,292 +1,560 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro2PNG - The Easiest Way to Convert Procreate Stamps to PNG</title>
-    <meta name="description" content="Stop screenshotting. Start creating. Our tool turns .brushset files into ready-to-use PNGs in seconds, ready for Canva, Photoshop, or your favorite design software.">
-    
-    <!-- Google Fonts Link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Link to your stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- ==> FAVICON LINKS <== -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-</head>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">The Easiest Way to Convert Procreate Stamps to PNG</h1>
-            <p class="tagline">Stop screenshotting. Start creating. Our tool turns .brushset files into ready-to-use PNGs in seconds, ready for Canva, Photoshop, or your favorite design software.</p>
-            
-            <!-- App Demo Image -->
-            <div class="app-demo">
-                <img src="https://via.placeholder.com/800x500/f0f0f0/cccccc?text=App+Demo+Screenshot" alt="Pro2PNG App Interface" class="demo-image">
-            </div>
-        </div>
-    </section>
+:root {
+    --font-family: 'Plus Jakarta Sans', sans-serif;
+    --background-color: #E9E9E3;
+    --text-box-bg: #F6F6F6;
+    --text-color: #555555;
+    --heading-color: #1a1a1a;
+    --frame-color: #FFFFFF;
+    --button-bg: #1a1a1a;
+    --button-text: #FFFFFF;
+    --button-secondary-bg: #FFFFFF;
+    --button-secondary-text: #1a1a1a;
+    --border-radius: 20px;
+    --container-padding: 40px;
+}
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>From Brushset to PNG in 3 Simple Steps</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">📁</div>
-                    <h3>1. Upload Files</h3>
-                    <p>Enter your license key and select one or more <code>.brushset</code> files from your device.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">⚡</div>
-                    <h3>2. Convert Securely</h3>
-                    <p>Our tool securely processes your files, extracting each stamp image.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">📥</div>
-                    <h3>3. Download PNGs</h3>
-                    <p>Get a neatly packaged <code>.zip</code> file containing all your stamps as PNGs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 14px; /* Base font size */
+}
 
-    <!-- Live Demo Section -->
-    <section class="live-demo">
-        <div class="container">
-            <h2>See it in Action: Try the Live Demo</h2>
-            <p class="demo-subtitle">Experience the magic yourself with our sample brushset file</p>
-            
-            <div class="demo-container">
-                <!-- Sample File Download -->
-                <div class="sample-download">
-                    <p>First, download our sample file:</p>
-                    <a href="demo-assets/Sample.brushset" download="Sample.brushset" class="download-btn">
-                        📁 Download Sample.brushset
-                    </a>
-                </div>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-                <!-- Drop Zone -->
-                <div class="drop-zone" id="dropZone">
-                    <div class="drop-content">
-                        <div class="drop-icon">🎯</div>
-                        <h3>Drag the sample file here to see the magic!</h3>
-                        <p>Or click to select the file</p>
-                        <input type="file" id="fileInput" accept=".brushset" style="display: none;">
-                    </div>
-                </div>
+section {
+    padding: 60px 0;
+}
 
-                <!-- Loading Animation -->
-                <div class="loading-container" id="loadingContainer" style="display: none;">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <p class="loading-text" id="loadingText">Analyzing file...</p>
-                </div>
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 600;
+}
 
-                <!-- Results -->
-                <div class="demo-results" id="demoResults" style="display: none;">
-                    <h3>✨ Conversion Complete!</h3>
-                    <p>Here are your extracted PNG stamps:</p>
-                    <div class="result-images" id="resultImages">
-                        <!-- Images will be dynamically inserted here -->
-                    </div>
-                    <div class="demo-cta">
-                        <a href="#packages" class="cta-button">Ready to Convert Your Own Brushes? Get Instant Access</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Helper class for styled boxes */
+.styled-box {
+    background-color: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    padding: var(--container-padding);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
-    <!-- Packages Section -->
-    <section class="packages" id="packages">
-        <div class="container">
-            <h2>Choose Your Package</h2>
-            
-            <div class="package-accordions">
-                <div class="package-accordion">
-                    <div class="package-header" data-package="starter">
-                        <h3>Starter Pack</h3>
-                        <span class="package-credits">5 Credits</span>
-                        <span class="accordion-arrow">▼</span>
-                    </div>
-                    <div class="package-content">
-                        <p class="package-description">For trying things out or small projects.</p>
-                        <ul class="package-features">
-                            <li><span class="feature-icon">💳</span> Flexible Credits: One credit lets you convert up to 3 .brushsets (50mb in total )</li>
-                            <li><span class="feature-icon">⚡</span> Batch Processing: Save time by converting multiple brushsets all in one go</li>
-                            <li><span class="feature-icon">🎯</span> Lossless PNGs: We extract the original stamp image without any quality loss</li>
-                            <li><span class="feature-icon">⏰</span> No Expiration: Use your credits whenever you need them. No subscriptions, no hidden fees</li>
-                        </ul>
-                        <a href="https://presentncherish.etsy.com" class="package-cta">Get Starter Pack on Etsy</a>
-                    </div>
-                </div>
+/* Hero Section */
+.hero .container {
+    background-color: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    padding: var(--container-padding);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
-                <div class="package-accordion active">
-                    <div class="package-header" data-package="premium">
-                        <h3>Premium Pack</h3>
-                        <span class="package-credits">10 Credits</span>
-                        <span class="best-value">Best Value</span>
-                        <span class="accordion-arrow">▼</span>
-                    </div>
-                    <div class="package-content">
-                        <p class="package-description">Perfect for most artists and creators.</p>
-                        <ul class="package-features">
-                            <li><span class="feature-icon">💳</span> Flexible Credits: One credit lets you convert up to 3 .brushsets (50mb in total )</li>
-                            <li><span class="feature-icon">⚡</span> Batch Processing: Save time by converting multiple brushsets all in one go</li>
-                            <li><span class="feature-icon">🎯</span> Lossless PNGs: We extract the original stamp image without any quality loss</li>
-                            <li><span class="feature-icon">⏰</span> No Expiration: Use your credits whenever you need them. No subscriptions, no hidden fees</li>
-                        </ul>
-                        <a href="https://presentncherish.etsy.com" class="package-cta">Get Premium Pack on Etsy</a>
-                    </div>
-                </div>
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
 
-                <div class="package-accordion">
-                    <div class="package-header" data-package="studio">
-                        <h3>Studio Pack</h3>
-                        <span class="package-credits">30 Credits</span>
-                        <span class="accordion-arrow">▼</span>
-                    </div>
-                    <div class="package-content">
-                        <p class="package-description">For power users and professionals.</p>
-                        <ul class="package-features">
-                            <li><span class="feature-icon">💳</span> Flexible Credits: One credit lets you convert up to 3 .brushsets (50mb in total )</li>
-                            <li><span class="feature-icon">⚡</span> Batch Processing: Save time by converting multiple brushsets all in one go</li>
-                            <li><span class="feature-icon">🎯</span> Lossless PNGs: We extract the original stamp image without any quality loss</li>
-                            <li><span class="feature-icon">⏰</span> No Expiration: Use your credits whenever you need them. No subscriptions, no hidden fees</li>
-                        </ul>
-                        <a href="https://presentncherish.etsy.com" class="package-cta">Get Studio Pack on Etsy</a>
-                    </div>
-                </div>
-            </div>
+.tagline {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            <div class="main-cta">
-                <a href="https://presentncherish.etsy.com" class="cta-button">Get Instant Access Now</a>
-            </div>
-        </div>
-    </section>
+.app-demo {
+    margin-top: 40px;
+}
 
-    <!-- Stamp Packs Section -->
-    <section class="stamp-packs">
-        <div class="container">
-            <h2>Need More Stamps? Check Out Our Collection</h2>
-            <p>Discover hundreds of high-quality Procreate stamp packs in our Etsy store</p>
-            
-            <div class="stamp-grid">
-                <div class="stamp-card">
-                    <div class="stamp-image">🎨</div>
-                    <h3>Artistic Brushes</h3>
-                    <p>Professional art stamps for creative projects</p>
-                </div>
-                <div class="stamp-card">
-                    <div class="stamp-image">🌸</div>
-                    <h3>Floral Collection</h3>
-                    <p>Beautiful botanical stamps for nature designs</p>
-                </div>
-                <div class="stamp-card">
-                    <div class="stamp-image">✨</div>
-                    <h3>Decorative Elements</h3>
-                    <p>Elegant decorative stamps for special occasions</p>
-                </div>
-                <div class="stamp-card">
-                    <div class="stamp-image">🎭</div>
-                    <h3>Character Stamps</h3>
-                    <p>Fun character stamps for storytelling</p>
-                </div>
-            </div>
-            
-            <div class="stamp-cta">
-                <a href="https://presentncherish.etsy.com" class="cta-button-secondary">Browse All Stamp Packs</a>
-            </div>
-        </div>
-    </section>
+.demo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What file formats do you support?</h3>
-                        <span class="faq-arrow">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We currently support .brushset files exported from Procreate. The tool extracts individual stamp images and converts them to high-quality PNG files.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How does the credit system work?</h3>
-                        <span class="faq-arrow">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Each credit allows you to convert up to 3 .brushset files in a single session, with a total file size limit of 50MB. Credits never expire and there are no monthly fees.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Is my data secure?</h3>
-                        <span class="faq-arrow">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, absolutely. All file processing happens securely on our servers, and we don't store your files after conversion. Your brushset files are automatically deleted after processing.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What if I need help?</h3>
-                        <span class="faq-arrow">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We're here to help! Contact us through our Etsy store or send us a message. We typically respond within 24 hours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* How It Works Section */
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Have questions or need support? We'd love to hear from you.</p>
-            
-            <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-            
-            <div id="form-status" style="display: none;">
-                <p>Thank you for your message! We'll get back to you soon.</p>
-                <a href="#" id="reset-form-button">Send another message</a>
-            </div>
-        </div>
-    </section>
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-    <script src="main.js"></script>
-</body>
-</html>
+.step {
+    text-align: center;
+    padding: 30px;
+    background: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 0.9rem;
+}
+
+/* Live Demo Section */
+.live-demo .container {
+    text-align: center;
+}
+
+.live-demo h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.demo-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    padding: var(--container-padding);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sample-download {
+    margin-bottom: 30px;
+}
+
+.sample-download p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.download-btn {
+    display: inline-block;
+    background: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.drop-zone {
+    background: #E9E9E3;
+    border: 2px dashed #cccccc;
+    border-radius: 15px;
+    padding: 50px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--heading-color);
+    background: #e0e0d8;
+}
+
+.drop-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.drop-content p {
+    font-size: 0.9rem;
+}
+
+.drop-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.loading-container, .demo-results {
+    padding: 30px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    background: var(--heading-color);
+}
+
+.loading-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.demo-results h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.result-images {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.result-image {
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* General Button Styles */
+.cta-button, .package-cta, .submit-btn, .cta-button-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.cta-button, .package-cta, .submit-btn {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.cta-button:hover, .package-cta:hover, .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-secondary {
+    background: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border: 1px solid var(--button-bg);
+}
+
+.cta-button-secondary:hover {
+    background: var(--button-bg);
+    color: var(--button-text);
+    transform: translateY(-2px);
+}
+
+/* Packages Section */
+.packages h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.package-accordions {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.package-accordion {
+    background: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.package-header {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.package-header h3 {
+    font-size: 1.3rem;
+}
+
+.package-credits {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.best-value {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.accordion-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.package-accordion.active .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+.package-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.package-accordion.active .package-content {
+    padding: 0 25px 25px;
+    max-height: 500px;
+}
+
+.package-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.package-features li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.feature-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.main-cta {
+    text-align: center;
+}
+
+/* Stamp Packs & FAQ & Contact Sections */
+.stamp-packs, .faq, .contact {
+    background-color: transparent;
+}
+
+.stamp-packs .container, .faq .container, .contact .container {
+    background-color: var(--text-box-bg);
+    border: 1px solid var(--frame-color);
+    border-radius: var(--border-radius);
+    padding: var(--container-padding);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stamp-packs h2, .faq h2, .contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.stamp-packs > .container > p, .contact > .container > p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stamp-card {
+    background: #E9E9E3;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.stamp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stamp-image {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.stamp-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.stamp-card p {
+    font-size: 0.9rem;
+}
+
+.stamp-cta {
+    text-align: center;
+}
+
+/* FAQ Section */
+.faq-list {
+    max-width: 700px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: #E9E9E3;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.faq-arrow {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.faq-item.open .faq-arrow {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.faq-item.open .faq-answer {
+    padding: 0 25px 20px;
+    max-height: 200px;
+}
+
+.faq-answer p {
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background-color: #E9E9E3;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--heading-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+    .steps, .stamp-grid {
+        grid-template-columns: 1fr;
+    }
+    .package-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .best-value {
+        align-self: flex-end;
+    }
+    :root {
+        --container-padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    .result-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cta-button, .package-cta, .submit-btn, .cta-button-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
