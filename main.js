@@ -1,45 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Accordion FAQ Logic ---
-    const faqItems = document.querySelectorAll('.faq-item');
+    
+    // --- Accordion Logic ---
+    // This function can be reused for any accordion group on the page
+    function setupAccordion(containerSelector) {
+        const accordionItems = document.querySelectorAll(`${containerSelector} .accordion-item`);
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            // Close other open items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('open')) {
+        if (accordionItems.length === 0) return;
+
+        accordionItems.forEach(item => {
+            const question = item.querySelector('.accordion-question');
+            question.addEventListener('click', () => {
+                const wasOpen = item.classList.contains('open');
+
+                // Close all items within this specific accordion group
+                accordionItems.forEach(otherItem => {
                     otherItem.classList.remove('open');
+                });
+
+                // If the clicked item wasn't already open, open it
+                if (!wasOpen) {
+                    item.classList.toggle('open');
                 }
             });
-            // Toggle the clicked item
-            item.classList.toggle('open');
         });
-    });
+    }
+
+    // Setup both accordion sections
+    setupAccordion('.pricing-accordion');
+    setupAccordion('.faq');
+
 
     // --- AJAX Form Submission Logic ---
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-    const resetFormButton = document.getElementById('reset-form-button'); // Get the reset button
+    const resetFormButton = document.getElementById('reset-form-button');
 
     async function handleSubmit(event) {
-        event.preventDefault(); // Prevent the default page reload
+        event.preventDefault();
         const data = new FormData(event.target);
         
         try {
             const response = await fetch(event.target.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (response.ok) {
-                // Success!
-                formStatus.style.display = 'flex'; // Show the success message (use flex)
-                form.style.display = 'none'; // Hide the form
+                formStatus.style.display = 'flex';
+                form.style.display = 'none';
             } else {
-                // Handle server errors
                 const responseData = await response.json();
                 if (Object.hasOwn(responseData, 'errors')) {
                     alert(responseData["errors"].map(error => error["message"]).join(", "));
@@ -48,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         } catch (error) {
-            // Handle network errors
             alert("Oops! There was a problem submitting your form.");
         }
     }
@@ -57,18 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener("submit", handleSubmit);
     }
 
-    // --- NEW: Reset Logic ---
     if (resetFormButton) {
         resetFormButton.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent the link from navigating
-
-            // Hide the success message
+            e.preventDefault();
             formStatus.style.display = 'none';
-
-            // Show the form again
-            form.style.display = 'flex'; // Use 'flex' since the form has display:flex
-
-            // Reset the form fields
+            form.style.display = 'flex';
             form.reset();
         });
     }
