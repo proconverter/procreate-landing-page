@@ -1,28 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Unified Accordion Logic ---
-    const allAccordions = document.querySelectorAll('.accordion-item');
+    // This function handles all accordion elements on the page.
+    const allAccordionItems = document.querySelectorAll('.accordion-item');
 
-    allAccordions.forEach(item => {
+    allAccordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
         
         header.addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
+            const currentlyOpen = item.classList.contains('open');
 
-            // This part closes any other open accordion item in the same group
-            // which is good for FAQs but might be optional for pricing.
-            // For now, it's a clean user experience.
-            item.parentElement.querySelectorAll('.accordion-item').forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('open');
-                }
-            });
+            // Optional: Close all other items in the same accordion block
+            // This creates a "one at a time" behavior.
+            const parentAccordion = item.closest('.accordion');
+            if (parentAccordion) {
+                parentAccordion.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+            }
 
-            // Toggle the clicked item
-            if (!isOpen) {
+            // Toggle the clicked item. If it wasn't open, open it.
+            if (!currentlyOpen) {
                 item.classList.add('open');
-            } else {
-                item.classList.remove('open');
             }
         });
     });
@@ -31,60 +32,76 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
 
+    // Only run this code if the demo elements actually exist on the page
     if (dropZone && fileInput) {
         const dropContent = dropZone.querySelector('.drop-content');
 
-        // Click to select file
+        // Allow clicking the drop zone to open the file selector
         dropZone.addEventListener('click', () => fileInput.click());
 
-        // Handle file selection
+        // Handle file selection from the input
         fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) handleFileUpload(e.target.files[0]);
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
         });
 
-        // Drag and drop functionality
+        // Add visual feedback for dragging a file over the zone
         dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // This is necessary to allow a drop
             dropZone.classList.add('dragover');
         });
 
+        // Remove visual feedback when the file leaves the zone
         dropZone.addEventListener('dragleave', () => {
             dropZone.classList.remove('dragover');
         });
 
+        // Handle the actual file drop
         dropZone.addEventListener('drop', (e) => {
             e.preventDefault();
             dropZone.classList.remove('dragover');
-            if (e.dataTransfer.files.length > 0) handleFileUpload(e.dataTransfer.files[0]);
+            if (e.dataTransfer.files.length > 0) {
+                handleFileUpload(e.dataTransfer.files[0]);
+            }
         });
 
         function handleFileUpload(file) {
+            // Basic validation for the demo
             if (!file.name.toLowerCase().endsWith('.brushset')) {
-                alert('Please use a .brushset file for the demo.');
+                alert('Please use a sample .brushset file for the demo.');
                 return;
             }
             
-            // Simulate processing
-            dropContent.innerHTML = `<h3>Processing...</h3><p>Your files are being converted.</p>`;
+            // Update the UI to show processing
+            if(dropContent) {
+                dropContent.innerHTML = `<h3>Processing...</h3><p>Your files are being converted.</p>`;
+            }
 
-            // Simulate success after a delay
+            // Simulate a delay for the conversion process
             setTimeout(() => {
-                dropContent.innerHTML = `<h3>✨ Success!</h3><p>Your PNGs would be ready for download.</p>`;
+                if(dropContent) {
+                    dropContent.innerHTML = `<h3>✨ Success!</h3><p>Your PNGs would be ready for download.</p>`;
+                }
             }, 2500);
         }
     }
 
-    // --- Smooth Scrolling for Anchor Links ---
+    // --- Smooth Scrolling for Anchor Links (e.g., "Get Access" button) ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            try {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            } catch (error) {
+                console.error("Error finding element for smooth scroll:", error);
             }
         });
     });
