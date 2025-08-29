@@ -6,8 +6,24 @@
 }
 
 body {
+    /* === START: ADDED BACKGROUND PATTERN === */
+    /* Blue background color */
+    background-color: #00b4ff;
+
+    /* Pattern Layer 1 (Swirl Icon) */
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='50' cy='50' r='47'/%3E%3Cpath d='M 50,3 A 23.5,23.5 0 0 1 50,50' transform='rotate(0, 50, 50 )' /%3E%3Cpath d='M 50,3 A 23.5,23.5 0 0 1 50,50' transform='rotate(120, 50, 50)' /%3E%3Cpath d='M 50,3 A 23.5,23.5 0 0 1 50,50' transform='rotate(240, 50, 50)' /%3E%3C/g%3E%3C/svg%3E"),
+        
+    /* Pattern Layer 2 (Arcs Icon) */
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Ccircle cx='50' cy='50' r='47'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='50' cy='50' r='47'/%3E%3Cg clip-path='url(%23a )'%3E%3Ccircle cx='3' cy='3' r='47'/%3E%3Ccircle cx='97' cy='3' r='47'/%3E%3Ccircle cx='3' cy='97' r='47'/%3E%3Ccircle cx='97' cy='97' r='47'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    /* How the patterns are positioned and repeated */
+    background-position: 0 0, 100px 100px; /* Offset the second pattern to interleave it */
+    background-size: 200px 200px; /* Make the repeating grid larger to space out the icons */
+    /* === END: ADDED BACKGROUND PATTERN === */
+
     font-family: 'Inter', sans-serif;
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */ /* This is replaced by the blue pattern background */
     color: #18181b;
     line-height: 1.6;
     display: flex;
